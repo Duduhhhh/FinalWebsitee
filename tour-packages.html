@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServPro - Tour Packages</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #ffd700;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding-bottom: 100px;
+        }
+
+        .package-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('package-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .package-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .package-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 2rem;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .package-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .package-features li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .booking-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+
+        .book-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .book-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .inquiry-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .inquiry-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .package-tag {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .itinerary {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .itinerary h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .itinerary-day {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            border-radius: 15px 15px 0 0;
+            padding: 1.5rem;
+        }
+
+        .modal-title {
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e9ecef;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+        }
+
+        .btn-send-inquiry {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-send-inquiry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .navbar-brand img {
+            height: 120px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add Inquiry Modal -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Send an Inquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="inquiryForm">
+                        <input type="hidden" id="packageName" name="packageName">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-send-inquiry">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="imgs/travel-tourlogo.png" alt="ServPro Logo" height="120">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tour-packages.html">Tour Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="book-service.php">Book A Service</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-warning" href="#contact">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="package-header">
+        <div class="container">
+            <h1 class="package-title">Our Tour Packages</h1>
+            <p class="lead">Discover the Philippines with our carefully curated travel experiences</p>
+        </div>
+    </header>
+
+    <!-- Packages Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Palawan Package -->
+            <div class="package-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="imgs/palawan-tourpackage.jpg" alt="Palawan Adventure" class="package-img">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="package-content">
+                            <span class="package-tag">Most Popular</span>
+                            <h2>Palawan Adventure Package</h2>
+                            <p class="package-price">₱12,999 <small class="text-muted">per person</small></p>
+                            <p>Experience the world-famous islands and beaches of Palawan with our 3-day adventure package.</p>
+                            <ul class="package-features">
+                                <li>Island Hopping Tour in El Nido</li>
+                                <li>Underground River Tour</li>
+                                <li>Beachfront Accommodation</li>
+                                <li>Daily Breakfast and Lunch</li>
+                                <li>Professional Tour Guide</li>
+                                <li>Airport Transfers</li>
+                            </ul>
+                            <div class="itinerary">
+                                <h4>Itinerary Highlights</h4>
+                                <div class="itinerary-day">
+                                    <strong>Day 1:</strong> Arrival & City Tour
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 2:</strong> Island Hopping Adventure
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 3:</strong> Underground River & Departure
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <div class="booking-buttons">
+                                    <a href="book-service.html" class="book-btn mb-2">Book Now</a>
+                                    <a href="#inquiry-form" class="inquiry-btn" data-package="palawan">Send Inquiry</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vigan Package -->
+            <div class="package-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="imgs/vigan-package.jpg" alt="Vigan Heritage Tour" class="package-img">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="package-content">
+                            <span class="package-tag">Cultural</span>
+                            <h2>Vigan Heritage Tour</h2>
+                            <p class="package-price">₱8,999 <small class="text-muted">per person</small></p>
+                            <p>Step back in time with our 2-day heritage tour in the historic city of Vigan.</p>
+                            <ul class="package-features">
+                                <li>Calle Crisologo Walking Tour</li>
+                                <li>Historical Museum Visits</li>
+                                <li>Traditional Crafts Workshop</li>
+                                <li>Local Cuisine Tasting</li>
+                                <li>Heritage Hotel Stay</li>
+                                <li>Transportation Services</li>
+                            </ul>
+                            <div class="itinerary">
+                                <h4>Itinerary Highlights</h4>
+                                <div class="itinerary-day">
+                                    <strong>Day 1:</strong> City Tour & Cultural Shows
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 2:</strong> Workshops & Food Tour
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="book-service.html" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bohol Package -->
+            <div class="package-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="imgs/bohol-package.jpg" alt="Bohol Discovery" class="package-img">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="package-content">
+                            <span class="package-tag">Nature & Adventure</span>
+                            <h2>Bohol Discovery Package</h2>
+                            <p class="package-price">₱15,999 <small class="text-muted">per person</small></p>
+                            <p>Discover the natural wonders of Bohol with our comprehensive 4-day package.</p>
+                            <ul class="package-features">
+                                <li>Chocolate Hills Tour</li>
+                                <li>Tarsier Sanctuary Visit</li>
+                                <li>Loboc River Cruise with Lunch</li>
+                                <li>Panglao Island Tour</li>
+                                <li>Beach Resort Accommodation</li>
+                                <li>Full Board Meals</li>
+                            </ul>
+                            <div class="itinerary">
+                                <h4>Itinerary Highlights</h4>
+                                <div class="itinerary-day">
+                                    <strong>Day 1:</strong> Arrival & Beach Resort Check-in
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 2:</strong> Countryside Tour
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 3:</strong> Island Activities
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 4:</strong> Free Time & Departure
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="book-service.html" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Siargao Package -->
+            <div class="package-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="imgs/siargao-package.jpg" alt="Siargao Surf Paradise" class="package-img">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="package-content">
+                            <span class="package-tag">Surf & Adventure</span>
+                            <h2>Siargao Surf Paradise</h2>
+                            <p class="package-price">₱18,999 <small class="text-muted">per person</small></p>
+                            <p>Ride the waves and experience the laid-back island life in the Surfing Capital of the Philippines.</p>
+                            <ul class="package-features">
+                                <li>Surf Lessons with Pro Instructor</li>
+                                <li>Island Hopping to Naked, Daku, and Guyam</li>
+                                <li>Sugba Lagoon Visit</li>
+                                <li>Magpupungko Rock Pools</li>
+                                <li>Beachfront Resort Stay</li>
+                                <li>Daily Breakfast and Some Meals</li>
+                            </ul>
+                            <div class="itinerary">
+                                <h4>Itinerary Highlights</h4>
+                                <div class="itinerary-day">
+                                    <strong>Day 1:</strong> Arrival & Surf Introduction
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 2:</strong> Island Hopping Adventure
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 3:</strong> Sugba Lagoon Trip
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 4:</strong> Rock Pools & Free Surf
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 5:</strong> Final Surf & Departure
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="book-service.html" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batanes Package -->
+            <div class="package-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="imgs/batanes-package.jpg" alt="Batanes Cultural Experience" class="package-img">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="package-content">
+                            <span class="package-tag">Cultural & Nature</span>
+                            <h2>Batanes Cultural Experience</h2>
+                            <p class="package-price">₱25,999 <small class="text-muted">per person</small></p>
+                            <p>Discover the untouched beauty and rich culture of the northernmost paradise of the Philippines.</p>
+                            <ul class="package-features">
+                                <li>Basco Lighthouse Visit</li>
+                                <li>Sabtang Island Day Tour</li>
+                                <li>Traditional Ivatan House Stay</li>
+                                <li>Rolling Hills Trek</li>
+                                <li>Cultural Village Tours</li>
+                                <li>Full Board Meals with Local Cuisine</li>
+                            </ul>
+                            <div class="itinerary">
+                                <h4>Itinerary Highlights</h4>
+                                <div class="itinerary-day">
+                                    <strong>Day 1:</strong> Arrival & Basco Tour
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 2:</strong> North Batan Tour
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 3:</strong> Sabtang Island
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 4:</strong> South Batan Tour
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="book-service.html" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sagada Package -->
+            <div class="package-card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="imgs/sagada-package.jpg" alt="Sagada Adventure" class="package-img">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="package-content">
+                            <span class="package-tag">Mountain Adventure</span>
+                            <h2>Sagada Mountain Adventure</h2>
+                            <p class="package-price">₱9,999 <small class="text-muted">per person</small></p>
+                            <p>Experience the mystical charm of Sagada with its caves, hanging coffins, and mountain trails.</p>
+                            <ul class="package-features">
+                                <li>Cave Connection Adventure</li>
+                                <li>Echo Valley & Hanging Coffins</li>
+                                <li>Kiltepan Sunrise Viewing</li>
+                                <li>Rice Terraces Trek</li>
+                                <li>Local Inn Accommodation</li>
+                                <li>Guide and Equipment Rental</li>
+                            </ul>
+                            <div class="itinerary">
+                                <h4>Itinerary Highlights</h4>
+                                <div class="itinerary-day">
+                                    <strong>Day 1:</strong> Arrival & Town Tour
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 2:</strong> Cave Adventure
+                                </div>
+                                <div class="itinerary-day">
+                                    <strong>Day 3:</strong> Sunrise & Trek
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="book-service.html" class="book-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 178 Querubin Subdivision, Ibayo Silangan, Naic, Cavite</p>
+                    <p><i class="fas fa-phone"></i> 0917 154 7753</p>
+                    <p><i class="fas fa-envelope"></i> servproph.airconditioning@gmail.com</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>©2024 Servpro. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#terms" class="text-decoration-none me-3">Terms & Conditions</a>
+                    <a href="#faq" class="text-decoration-none">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle inquiry form submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you shortly.');
+            document.getElementById('inquiryModal').querySelector('.btn-close').click();
+            this.reset();
+        });
+
+        // Set package name in inquiry modal
+        document.querySelectorAll('.inquiry-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const packageName = this.getAttribute('data-package');
+                document.getElementById('packageName').value = packageName;
+                new bootstrap.Modal(document.getElementById('inquiryModal')).show();
+            });
+        });
+
+        // Update all book now buttons to link to book-service.html
+        document.querySelectorAll('.book-btn').forEach(btn => {
+            btn.href = 'book-service.html';
+        });
+    </script>
+</body>
+</html> 

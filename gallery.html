@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ServPro Consolidated Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+    <div id="backButton" class="floating-back-button">
+        <a href="javascript:history.back()">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="imgs/servprologoblck.png" alt="ServPro Logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About</a>
+                <div class="dropdown">
+                    <a href="#">Services <span class="dropdown-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="airconditioners.html">Air Conditioner</a>
+                        <a href="travel-tour.html">Travel & Tours</a>
+                        <a href="cctvalarm.html">CCTV Alarm</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="#contact" class="contact-btn">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-hero">
+            <div class="hero-content">
+                <h1>Our Project Gallery</h1>
+                <p>Explore our completed projects and successful installations</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ac-installation">AC Installation</button>
+                    <button class="filter-btn" data-filter="ac-maintenance">AC Maintenance</button>
+                    <button class="filter-btn" data-filter="ac-repair">AC Repair</button>
+                    <button class="filter-btn" data-filter="construction">Construction</button>
+                    <button class="filter-btn" data-filter="electric-gate">Electric Gate</button>
+                    <button class="filter-btn" data-filter="solar-panel">Solar Panel</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-grid">
+                    <!-- AC Installation Category -->
+                    <div class="gallery-item" data-category="ac-installation">
+                        <img src="imgs/install1.jpg" alt="AC Installation - Indoor Unit Installation">
+                        <div class="gallery-item-overlay">
+                            <h4>Indoor Unit Installation</h4>
+                            <p>Professional indoor AC unit mounting and setup</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-installation">
+                        <img src="imgs/install2.jpg" alt="AC Installation - Outdoor Unit Setup">
+                        <div class="gallery-item-overlay">
+                            <h4>Outdoor Unit Setup</h4>
+                            <p>Expert outdoor condenser unit installation</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-installation">
+                        <img src="imgs/install3.jpg" alt="AC Installation - Commercial Setup">
+                        <div class="gallery-item-overlay">
+                            <h4>Commercial Installation</h4>
+                            <p>Large-scale commercial AC system installation</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-installation">
+                        <img src="imgs/install4.jpg" alt="AC Installation - Piping Work">
+                        <div class="gallery-item-overlay">
+                            <h4>Piping Installation</h4>
+                            <p>Professional refrigerant line installation</p>
+                        </div>
+                    </div>
+
+                    <!-- AC Maintenance Category -->
+                    <div class="gallery-item" data-category="ac-maintenance">
+                        <img src="imgs/maintain1.jpg" alt="AC Maintenance - Unit Cleaning">
+                        <div class="gallery-item-overlay">
+                            <h4>Unit Cleaning</h4>
+                            <p>Thorough cleaning and maintenance service</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-maintenance">
+                        <img src="imgs/maintain2.jpg" alt="AC Maintenance - Filter Service">
+                        <div class="gallery-item-overlay">
+                            <h4>Filter Service</h4>
+                            <p>Regular filter cleaning and replacement</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-maintenance">
+                        <img src="imgs/maintain3.jpg" alt="AC Maintenance - System Check">
+                        <div class="gallery-item-overlay">
+                            <h4>System Check</h4>
+                            <p>Comprehensive AC system inspection</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-maintenance">
+                        <img src="imgs/maintain4.jpg" alt="AC Maintenance - Outdoor Unit Service">
+                        <div class="gallery-item-overlay">
+                            <h4>Outdoor Service</h4>
+                            <p>Complete outdoor unit maintenance</p>
+                        </div>
+                    </div>
+
+                    <!-- AC Repair Category -->
+                    <div class="gallery-item" data-category="ac-repair">
+                        <img src="imgs/ac-repair/repair1.jpg" alt="AC Repair - Component Replacement">
+                        <div class="gallery-item-overlay">
+                            <h4>Component Repair</h4>
+                            <p>Expert AC component replacement service</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-repair">
+                        <img src="imgs/ac-repair/repair2.jpg" alt="AC Repair - Diagnostic Service">
+                        <div class="gallery-item-overlay">
+                            <h4>Diagnostic Service</h4>
+                            <p>Professional AC system troubleshooting</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-repair">
+                        <img src="imgs/ac-repair/repair3.jpg" alt="AC Repair - Emergency Service">
+                        <div class="gallery-item-overlay">
+                            <h4>Emergency Repair</h4>
+                            <p>24/7 emergency AC repair service</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="ac-repair">
+                        <img src="imgs/ac-repair/repair4.jpg" alt="AC Repair - System Restoration">
+                        <div class="gallery-item-overlay">
+                            <h4>System Restoration</h4>
+                            <p>Complete AC system repair and restoration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact us today for a free consultation and quote</p>
+                <a href="index.html" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ServPro Consolidated Inc. All rights reserved.</p>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/backButton.js"></script>
+</body>
+</html> 

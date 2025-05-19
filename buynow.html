@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Air Conditioner - ServPro Consolidated Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .purchase-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .product-details {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-image {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5em;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .product-features {
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .feature-item i {
+            color: #FFD700;
+            margin-right: 10px;
+        }
+
+        .purchase-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #FFD700;
+            outline: none;
+        }
+
+        .btn-purchase {
+            background: #FFD700;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        .btn-purchase:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .warranty-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .warranty-info h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .warranty-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .warranty-info li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .warranty-info li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .product-details {
+                flex-direction: column;
+            }
+
+            .product-image {
+                max-width: 100%;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0057B8;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top i {
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: #0057B8;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #003d82;
+            transform: translateY(-2px);
+        }
+
+        .back-button i {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Products
+    </a>
+    <div class="purchase-container">
+        <div class="product-details">
+            <div class="product-image">
+                <img id="productImage" src="" alt="Air Conditioner">
+            </div>
+            <div class="product-info">
+                <h1 class="product-title" id="productTitle"></h1>
+                <div class="product-price" id="productPrice"></div>
+                <div class="product-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Energy Efficient Inverter Technology</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>WiFi Smart Control</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Self-Cleaning Function</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Sleep Mode for Comfort</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Quiet Operation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="purchase-form">
+            <h2>Complete Your Purchase</h2>
+            <form id="purchaseForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Complete Address</label>
+                    <textarea id="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="installationDate">Preferred Installation Date</label>
+                    <input type="date" id="installationDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="cash">Cash on Delivery</option>
+                        <option value="bank">Bank Transfer</option>
+                        <option value="gcash">GCash</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-purchase">Complete Purchase</button>
+            </form>
+        </div>
+
+        <div class="warranty-info">
+            <h3>Warranty Information</h3>
+            <ul>
+                <li>1 Year Parts and Labor</li>
+                <li>5 Years Compressor Warranty</li>
+                <li>Free Installation Service</li>  
+                <li>Regular Maintenance Reminders</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('product');
+            const type = urlParams.get('type');
+            const brand = urlParams.get('brand');
+            const capacity = urlParams.get('capacity');
+            const price = urlParams.get('price');
+
+            // Product information mapping
+            const productInfo = {
+                'aux-split-2.0': {
+                    image: 'imgs/aux-ac.jpg',
+                    title: 'AUX 2.0 HP Split Type Inverter',
+                    features: [
+                        'Energy Efficient Inverter Technology',
+                        'WiFi Smart Control',
+                        'Self-Cleaning Function',
+                        'Sleep Mode for Comfort',
+                        'Quiet Operation'
+                    ]
+                },
+                'carrier-window-1.5': {
+                    image: 'imgs/carrier-ac.jpg',
+                    title: 'Carrier 1.5 HP Window Type Inverter',
+                    features: [
+                        'Energy Efficient Inverter Technology',
+                        'Smart Control',
+                        'Self-Cleaning Function',
+                        'Sleep Mode for Comfort',
+                        'Quiet Operation'
+                    ]
+                },
+                'daikin-split-2.5': {
+                    image: 'imgs/daikin-ac.jpg',
+                    title: 'Daikin 2.5 HP Split Type with WiFi',
+                    features: [
+                        'Energy Efficient Inverter Technology',
+                        'WiFi Smart Control',
+                        'Self-Cleaning Function',
+                        'Sleep Mode for Comfort',
+                        'Quiet Operation'
+                    ]
+                }
+            };
+
+            // Update product details
+            if (product && productInfo[product]) {
+                const info = productInfo[product];
+                document.getElementById('productImage').src = info.image;
+                document.getElementById('productTitle').textContent = info.title;
+                document.getElementById('productPrice').textContent = `₱ ${parseInt(price).toLocaleString()}`;
+            }
+
+            // Handle form submission
+            document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Generate booking reference
+                const ref = 'SP-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+                
+                // Show success message
+                alert(`Purchase successful! Your reference number is: ${ref}\nOur team will contact you shortly to confirm your order and installation details.`);
+                
+                // Reset form
+                this.reset();
+            });
+
+            const backToTopButton = document.getElementById('backToTop');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                if (scrollTop < lastScrollTop) {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

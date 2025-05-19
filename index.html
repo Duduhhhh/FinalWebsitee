@@ -1,0 +1,987 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServPro Consolidated Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo" style="width: 200px;">
+                <a href="index.html">
+                    <img src="imgs/servprologoblck.png" alt="ServPro Logo" style="width: 100%; height: auto;">
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="aboutus.html">About</a>
+                <div class="dropdown">
+                    <a href="#">Services <span class="dropdown-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="airconditioners.html">Air Conditioner</a>
+                        <a href="travelandtour.html">Travel & Tours</a>
+                        <a href="cctvalarm.html">CCTV Alarm</a>
+                    </div>
+                </div>
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <a href="#contact" class="contact-btn">Contact Us <span class="dropdown-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="openContactModal('call')"><i class="fas fa-phone"></i> Call Us</a>
+                        <a href="#" onclick="openContactModal('email')"><i class="fas fa-envelope"></i> Email Us</a>
+                        <a href="https://www.facebook.com/servproairconditioning" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=0178+ServPro+Consolidated+Inc+Querubin+Subdivision+Ibayo+Silangan+Naic+Cavite+4110" target="_blank"><i class="fas fa-map-marker-alt"></i> Visit Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="nav-overlay"></div>
+    </header>
+
+    <main>
+        <section class="hero" style="background-image: url('imgs/logo-large.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Welcome to</h1>
+                <div class="company-name">
+                    <img src="imgs/servprologo.png" alt="SERVPRO CONSOLIDATED INC.">
+                    </div>
+                <p class="tagline">We Care for your Comfort</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="cta-button primary">What We Offer ›</a>
+                    <a href="#about" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">WHY CHOOSE US?</h2>
+                        <h3 class="about-subtitle">About SERVPRO</h3>
+                        <p class="about-description">
+                            ServPro was founded in 2017 working with top-notch designers and architects to deliver excellence on each project. We select only the most qualified and craftspeople, using only quality materials. We set ourselves apart with a reputation for building trust and confidence, and delivering top-quality work.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    <div class="about-image">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <div class="corner-top-right"></div>
+                                <div class="corner-bottom-left"></div>
+                                <div class="blank-photo">
+                                    <!-- Add your photo here by uncommenting and updating the src -->
+                                    <img src="imgs/technician.jpg" alt="ServPro Image">
+                            </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </section>
+    
+        <section class="services-section" id="services">
+            <div class="services-container">
+                <h2 class="services-title">OUR SERVICES</h2>
+                <div class="services-subtitle">
+                    <h3>Comprehensive Solutions for Your Needs</h3>
+                    <p>Discover our wide range of professional services designed to enhance your comfort and security.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Air Conditioning -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h4>Air Conditioning</h4>
+                        <p>Expert installation, maintenance, and repair services for all types of air conditioning systems.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Installation & Setup</li>
+                            <li><i class="fas fa-check"></i> Maintenance & Repair</li>
+                        </ul>
+                        <a href="airconditioners.html" class="learn-more">Learn More <span>→</span></a>
+                    </div>
+
+                    <!-- Travel & Tours -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h4>Travel & Tours</h4>
+                        <p>Comprehensive travel solutions and tour packages for both leisure and business travelers.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Package Tours</li>
+                            <li><i class="fas fa-check"></i> Travel Planning</li>
+                            <li><i class="fas fa-check"></i> Custom Itineraries</li>
+                        </ul>
+                        <a href="travelandtour.html" class="learn-more">Learn More <span>→</span></a>
+                    </div>
+
+                    <!-- Home Security -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Home Security</h4>
+                        <p>Advanced security solutions to protect your home and provide peace of mind.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> CCTV Installation</li>
+                            <li><i class="fas fa-check"></i> Access Control</li>
+                        </ul>
+                        <a href="cctvalarm.html" class="learn-more">Learn More <span>→</span></a>
+                    </div>
+
+                    <!-- Construction Services -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h4>Construction Services</h4>
+                        <p>Professional construction and renovation services for residential and commercial projects.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Building Construction</li>
+                            <li><i class="fas fa-check"></i> Renovation</li>
+                            <li><i class="fas fa-check"></i> Project Management</li>
+                        </ul>
+                        <a href="maintenance.html" class="learn-more">Learn More <span>→</span></a>
+                    </div>
+
+                    <!-- Electric Gate -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h4>Electric Gate</h4>
+                        <p>Automated gate solutions for enhanced security and convenience at your property.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Installation</li>
+                            <li><i class="fas fa-check"></i> Maintenance</li>
+                            <li><i class="fas fa-check"></i> Remote Control Setup</li>
+                        </ul>
+                        <a href="maintenance.html" class="learn-more">Learn More <span>→</span></a>
+                    </div>
+
+                    <!-- Solar Panel System -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <h4>Solar Panel System</h4>
+                        <p>Sustainable energy solutions with professional solar panel installation and maintenance.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> System Design</li>
+                            <li><i class="fas fa-check"></i> Installation</li>
+                            <li><i class="fas fa-check"></i> Energy Monitoring</li>
+                        </ul>
+                        <a href="maintenance.html" class="learn-more">Learn More <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <h2 class="gallery-title">OUR FEATURED GALLERY</h2>
+                <div class="gallery-subtitle">
+                    <h3>No projet is too big for our team.</h3>
+                    <p>We can do air conditioning installation in residential and<br>Commercial building.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <!-- Row 1 -->
+                    <div class="gallery-item">
+                        <img src="imgs/ac-installation1.jpg" alt="AC Installation - Wall Mount">
+            </div>
+                    <div class="gallery-item">
+                        <img src="imgs/ac-installation2.jpg" alt="AC Installation - Outdoor">
+                        </div>
+                    <div class="gallery-item">
+                        <img src="imgs/ac-installation3.jpg" alt="AC Installation - Indoor">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imgs/ac-installation4.jpg" alt="AC Installation - Commercial">
+                </div>
+
+                    <!-- Row 2 -->
+                    <div class="gallery-item">
+                        <img src="imgs/ac-maintenance1.jpg" alt="AC Maintenance - Indoor Unit">
+            </div>
+                    <div class="gallery-item">
+                        <img src="imgs/ac-maintenance2.jpg" alt="AC Maintenance - Outdoor Unit">
+                        </div>
+                    <div class="gallery-item">
+                        <img src="imgs/ac-repair1.jpg" alt="AC Repair Work">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="imgs/ac-repair2.jpg" alt="AC Repair - Outdoor Unit">
+                </div>
+            </div>
+
+                <div class="gallery-button">
+                    <a href="gallery.html" class="browse-more">Browse More ›</a>
+                        </div>
+                    </div>
+    </section>
+
+        <section class="registrations-section">
+            <div class="registrations-container">
+                <div class="registrations-content">
+                    <div class="building-image">
+                        <img src="imgs/building-modern.jpg" alt="Modern Building Architecture">
+                        <div class="yellow-overlay"></div>
+                </div>
+                    <div class="registrations-info">
+                        <h2 class="registrations-title">OUR REGISTRATIONS</h2>
+                        
+                        <div class="registration-item">
+                            <div class="reg-logo">
+                                <img src="imgs/sec-logo.png" alt="SEC Logo">
+            </div>
+                            <div class="reg-text">
+                                <p>Our Company is a legal corporation registered with the SEC since 2017.</p>
+        </div>
+                    </div>
+
+                        <div class="registration-item">
+                            <div class="reg-logo">
+                                <img src="imgs/dti-logo.png" alt="DTI Logo">
+                    </div>
+                            <div class="reg-text">
+                                <p>Our Company is accredited by the DTI as One Star Refrigeration and Airconditioning (Type A & B) shop.</p>
+                </div>
+                    </div>
+
+                        <div class="registration-item">
+                            <div class="reg-logo">
+                                <img src="imgs/philgeps-logo.jpg" alt="PhilGEPS Logo">
+                </div>
+                            <div class="reg-text">
+                                <p>Our Company is a member of PhilGEPS since 2017 under Red Category.</p>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                    </div>
+        </section>
+
+        <section class="clients-section">
+            <div class="clients-container">
+                <h2 class="clients-title">MEET OUR TOP CLIENTS<span class="yellow-line"></span></h2>
+                
+                <div class="clients-grid">
+                    <!-- Row 1 -->
+                    <div class="client-logo">
+                        <img src="imgs/integrated-national.png" alt="Integrated National">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/cvsumain.jpg" alt="Green Valley">
+                    </div>
+                    <div class="client-logo">
+                        <img src="imgs/naicdoctors.jpg" alt="NDH">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/bayan.jpg" alt="Bayan">
+                    </div>
+                    <div class="client-logo">
+                        <img src="imgs/savings.png" alt="Savings">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/irrigation.png" alt="Education">
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="client-logo">
+                        <img src="imgs/mlhuillier.png" alt="M Lhuillier">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/cebuana.png" alt="Cebuana Lhuillier">
+                    </div>
+                    <div class="client-logo">
+                        <img src="imgs/pnb.png" alt="PNB">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/nakashima.png" alt="Nakashima">
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="client-logo">
+                        <img src="imgs/dalayuan.jpg" alt="Dalayuan Library">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/petron.png" alt="Petron">
+                    </div>
+                    <div class="client-logo">
+                        <img src="imgs/tubig.png" alt="Matagbak">
+                </div>
+                    <div class="client-logo">
+                        <img src="imgs/raemulan.jpg" alt="Raramulan">
+        </div>
+                        </div>
+                    </div>
+    </section>
+
+        <section class="location-section">
+            <div class="location-container">
+                <h2 class="location-title">OUR LOCATION</h2>
+                <h3 class="location-subtitle">COME VISIT US</h3>
+                <div class="location-content">
+                    <div class="location-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.7676868493893!2d120.76770277497637!3d14.322528185847774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339629c4276d13bf%3A0xae010a2a43f1ca9b!2sServPro%20Consolidated%20Inc.!5e0!3m2!1sen!2sph!4v1710900547959!5m2!1sen!2sph"
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="location-details">
+                        <div class="store-image">
+                            <img src="imgs/logo-large.jpg" alt="ServPro Store Front">
+                    </div>
+                        <p class="location-address">0178 Servpro Consolidated Inc. Querubin Subdivision,<br>Ibayo Silangan, Naic, 4110 Cavite</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=0178+ServPro+Consolidated+Inc+Querubin+Subdivision+Ibayo+Silangan+Naic+Cavite+4110" 
+                           class="directions-btn" 
+                           target="_blank">
+                            Get Directions ›
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <section class="testimonials-section">
+            <div class="testimonials-container">
+                <h2 class="testimonials-title">CLIENT TESTIMONIALS</h2>
+                <h3 class="testimonials-subtitle">What People Are Saying About Us.</h3>
+                
+                <div class="testimonials-carousel">
+                    <div class="carousel-navigation">
+                        <button class="carousel-btn prev-btn" aria-label="Previous testimonial">‹</button>
+                        <div class="testimonials-wrapper">
+                            <div class="testimonial-card active">
+                                <div class="testimonial-image">
+                                    <img src="imgs/female.png" alt="N. Cayas">
+                                </div>
+                                <div class="rating">★★★★★</div>
+                                <p class="testimonial-text">"Very approachable and friendly kapag may mga question na inask. Mabilis at maayos po ang service nila. Super Ok highly recommended."</p>
+                                <h4 class="client-name">N. Cayas</h4>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="imgs/female.png" alt="A.K Santos">
+                                </div>
+                                <div class="rating">★★★★☆</div>
+                                <p class="testimonial-text">"Kudos! Good, quality and timely service!
+                                    Approachable and knowledgeable staff / technicians. Good customer service!
+                                    Documented every works.
+                                    "</p>
+                                <h4 class="client-name">A.K Santos</h4>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="imgs/female.png" alt="L. Frogosa">
+                                </div>
+                                <div class="rating">★★★★★</div>
+                                <p class="testimonial-text">"I'm glad and happy na right on time yung pagpapakabit ko ng aircon. Pero ang mas ikinatuwa ko ay nabigyan ako ng discount. Sobrang bilis din ng installation services ng Servpro."</p>
+                                <h4 class="client-name">L. Frogosa</h4>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next-btn" aria-label="Next testimonial">›</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <button class="dot active" aria-label="Testimonial 1"></button>
+                        <button class="dot" aria-label="Testimonial 2"></button>
+                        <button class="dot" aria-label="Testimonial 3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="imgs/servprologoblck.png" alt="ServPro Logo">
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                </ul>
+                <div class="social-links">
+                    <h3>Follow our socials</h3>
+                    <div class="social-icons text-center">
+                        <a href="index.html" class="globe-icon"><i class="fas fa-globe"></i></a>
+                        <a href="https://www.facebook.com/servproairconditioning" target="_blank" class="facebook-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="instagram-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>0178 Servpro Consolidated Inc., Querubin Subdivision, Ibayo Silangan, Naic, 4110 Cavite</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>servproph.airconditioning@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>+63 917 154 8095 / +63 917 154 7753</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>(046) 430 2694</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ServPro Consolidated Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add these modals before the closing body tag -->
+    <div id="call-modal" class="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal('call')">&times;</span>
+            <h2>Contact Numbers</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="contact-details">
+                        <h3>Mobile Numbers</h3>
+                        <p>+63 917 154 8095</p>
+                        <p>+63 917 154 7753</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-details">
+                        <h3>Landline</h3>
+                        <p>(046) 430 2694</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-details">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 5:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="email-modal" class="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal('email')">&times;</span>
+            <h2>Send Us a Message</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="inquiry">General Inquiry</option>
+                        <option value="service">Service Request</option>
+                        <option value="quote">Request for Quote</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Contact Modal Styles */
+        .contact-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .contact-modal .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            position: relative;
+            animation: modalOpen 0.3s ease-out;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #0057B8;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-details h3 {
+            color: #0057B8;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .contact-form {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0057B8;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #0057B8;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #003d82;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-modal .modal-content {
+                width: 95%;
+                padding: 20px;
+                margin: 10% auto;
+            }
+        }
+
+        /* Add this to your existing styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0057B8;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top i {
+            font-size: 1.2em;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0057B8;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+        }
+
+        .social-icons i {
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials Carousel Styles */
+        .testimonials-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .carousel-navigation {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonials-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .testimonial-card {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .testimonial-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .carousel-btn {
+            background: #0057B8;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .carousel-btn:hover {
+            background: #003d82;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: -20px;
+        }
+
+        .next-btn {
+            right: -20px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #0057B8;
+            transform: scale(1.2);
+        }
+
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rating {
+            color: #FFD700;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .client-name {
+            color: #0057B8;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+
+            .prev-btn {
+                left: -10px;
+            }
+
+            .next-btn {
+                right: -10px;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        function openContactModal(type) {
+            document.getElementById(type + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal(type) {
+            document.getElementById(type + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('contact-modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Close the modal
+            closeContactModal('email');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                if (scrollTop < lastScrollTop) {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Testimonials Carousel Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0;
+
+            // Function to update carousel position
+            function updateCarousel() {
+                // Update cards
+                testimonialCards.forEach((card, index) => {
+                    card.classList.remove('active');
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                    }
+                });
+
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            // Next button click handler
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % testimonialCards.length;
+                updateCarousel();
+            });
+
+            // Previous button click handler
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+                updateCarousel();
+            });
+
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+
+            // Auto-advance carousel every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % testimonialCards.length;
+                updateCarousel();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

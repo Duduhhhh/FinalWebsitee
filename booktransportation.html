@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Transportation - ServPro Consolidated Inc.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imgs/Servpro Travels Logo.png" alt="ServPro Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <div class="dropdown">
+                <a href="#" class="active">Services <span class="dropdown-arrow">▾</span></a>
+                <div class="dropdown-content">
+                    <a href="airconditioners.html">Air Conditioner</a>
+                    <a href="travelandtour.html" class="active">Travel & Tours</a>
+                </div>
+            </div>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="contact-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="transportation-booking-container">
+            <div class="booking-header">
+                <h1>Book Transportation</h1>
+                <p>Fill out the form below to book your transportation</p>
+            </div>
+
+            <div class="booking-content">
+                <div class="booking-form">
+                    <form id="transportationForm">
+                        <div class="form-group">
+                            <label for="province">Select Destination</label>
+                            <select id="province" name="province" required>
+                                <option value="">Select a destination</option>
+                                <option value="bicol">Bicol Region</option>
+                                <option value="iloilo">Iloilo</option>
+                                <option value="camsur">Camarines Sur</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flightClass">Flight Class</label>
+                            <select id="flightClass" name="flightClass" required>
+                                <option value="">Select flight class</option>
+                                <option value="economy">Economy Class</option>
+                                <option value="business">Business Class</option>
+                                <option value="first">First Class</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="departureAirport">Departure Airport</label>
+                            <select id="departureAirport" name="departureAirport" required>
+                                <option value="">Select departure airport</option>
+                                <option value="manila">Manila (NAIA)</option>
+                                <option value="cebu">Cebu (Mactan)</option>
+                                <option value="clark">Clark International</option>
+                                <option value="davao">Davao International</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="departureDate">Departure Date</label>
+                            <input type="date" id="departureDate" name="departureDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="returnDate">Return Date</label>
+                            <input type="date" id="returnDate" name="returnDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="passengers">Number of Passengers</label>
+                            <input type="number" id="passengers" name="passengers" min="1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Meal preferences, wheelchair assistance, etc."></textarea>
+                        </div>
+
+                        <div class="price-summary">
+                            <h3>Price Summary</h3>
+                            <div class="price-details">
+                                <div class="price-item">
+                                    <span>Base Fare</span>
+                                    <span id="baseFare">₱0</span>
+                                </div>
+                                <div class="price-item">
+                                    <span>Taxes & Fees</span>
+                                    <span id="taxesAndFees">₱0</span>
+                                </div>
+                                <div class="price-item total">
+                                    <span>Total Amount</span>
+                                    <span id="totalAmount">₱0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Book Flight</button>
+                    </form>
+                </div>
+
+                <div class="booking-info">
+                    <div class="info-card">
+                        <h3>Flight Rates</h3>
+                        <div class="rate-list">
+                            <div class="rate-item">
+                                <h4>Economy Class</h4>
+                                <ul>
+                                    <li>Bicol Region: From ₱2,999</li>
+                                    <li>Iloilo: From ₱2,499</li>
+                                    <li>Camarines Sur: From ₱2,299</li>
+                                </ul>
+                            </div>
+                            <div class="rate-item">
+                                <h4>Business Class</h4>
+                                <ul>
+                                    <li>Bicol Region: From ₱8,500</li>
+                                    <li>Iloilo: From ₱7,800</li>
+                                    <li>Camarines Sur: From ₱7,200</li>
+                                </ul>
+                            </div>
+                            <div class="rate-item">
+                                <h4>First Class</h4>
+                                <ul>
+                                    <li>Bicol Region: From ₱12,500</li>
+                                    <li>Iloilo: From ₱11,900</li>
+                                    <li>Camarines Sur: From ₱10,900</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Flight Schedules</h3>
+                        <div class="schedule-list">
+                            <div class="schedule-item">
+                                <h4>Bicol Region</h4>
+                                <ul>
+                                    <li><i class="fas fa-plane-departure"></i> Manila - Legazpi: Daily</li>
+                                    <li><i class="fas fa-plane-departure"></i> Cebu - Legazpi: Mon, Wed, Fri</li>
+                                    <li><i class="fas fa-plane-departure"></i> Clark - Legazpi: Tue, Thu, Sat</li>
+                                </ul>
+                            </div>
+                            <div class="schedule-item">
+                                <h4>Iloilo</h4>
+                                <ul>
+                                    <li><i class="fas fa-plane-departure"></i> Manila - Iloilo: Daily</li>
+                                    <li><i class="fas fa-plane-departure"></i> Cebu - Iloilo: Tue, Thu, Sun</li>
+                                    <li><i class="fas fa-plane-departure"></i> Davao - Iloilo: Mon, Fri</li>
+                                </ul>
+                            </div>
+                            <div class="schedule-item">
+                                <h4>Camarines Sur</h4>
+                                <ul>
+                                    <li><i class="fas fa-plane-departure"></i> Manila - Naga: Daily</li>
+                                    <li><i class="fas fa-plane-departure"></i> Cebu - Naga: Wed, Sat</li>
+                                    <li><i class="fas fa-plane-departure"></i> Clark - Naga: Mon, Thu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Baggage Information</h3>
+                        <div class="baggage-list">
+                            <div class="baggage-item">
+                                <h4>Economy Class</h4>
+                                <ul>
+                                    <li>Carry-on: 7kg</li>
+                                    <li>Checked: 20kg</li>
+                                </ul>
+                            </div>
+                            <div class="baggage-item">
+                                <h4>Business Class</h4>
+                                <ul>
+                                    <li>Carry-on: 10kg</li>
+                                    <li>Checked: 30kg</li>
+                                </ul>
+                            </div>
+                            <div class="baggage-item">
+                                <h4>First Class</h4>
+                                <ul>
+                                    <li>Carry-on: 12kg</li>
+                                    <li>Checked: 40kg</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .transportation-booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .booking-header h1 {
+            color: #0057B8;
+            margin-bottom: 10px;
+        }
+
+        .booking-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .booking-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .price-summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .price-summary h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .price-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-item.total {
+            font-weight: 700;
+            color: #0057B8;
+            border-bottom: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #0057B8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #003d82;
+        }
+
+        .booking-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            color: #0057B8;
+            margin-bottom: 15px;
+        }
+
+        .rate-list,
+        .schedule-list,
+        .baggage-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .rate-item h4,
+        .schedule-item h4,
+        .baggage-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .rate-item ul,
+        .schedule-item ul,
+        .baggage-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rate-item li,
+        .schedule-item li,
+        .baggage-item li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .booking-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0057B8;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top i {
+            font-size: 1.2em;
+        }
+    </style>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const provinceSelect = document.getElementById('province');
+            const flightClassSelect = document.getElementById('flightClass');
+            const departureAirportSelect = document.getElementById('departureAirport');
+            const departureDateInput = document.getElementById('departureDate');
+            const returnDateInput = document.getElementById('returnDate');
+            const baseFareSpan = document.getElementById('baseFare');
+            const taxesAndFeesSpan = document.getElementById('taxesAndFees');
+            const totalAmountSpan = document.getElementById('totalAmount');
+
+            // Set minimum date for departure and return
+            const today = new Date().toISOString().split('T')[0];
+            departureDateInput.min = today;
+            returnDateInput.min = today;
+
+            // Update return date minimum when departure date changes
+            departureDateInput.addEventListener('change', function() {
+                returnDateInput.min = this.value;
+                if (returnDateInput.value && returnDateInput.value < this.value) {
+                    returnDateInput.value = this.value;
+                }
+                calculateTotal();
+            });
+
+            // Calculate total when return date changes
+            returnDateInput.addEventListener('change', calculateTotal);
+
+            // Update departure airport based on province selection
+            provinceSelect.addEventListener('change', function() {
+                const province = this.value;
+                departureAirportSelect.innerHTML = '<option value="">Select departure airport</option>';
+                
+                if (province === 'bicol') {
+                    addDepartureAirport('Manila');
+                    addDepartureAirport('Cebu');
+                    addDepartureAirport('Clark');
+                } else if (province === 'iloilo') {
+                    addDepartureAirport('Manila');
+                    addDepartureAirport('Cebu');
+                    addDepartureAirport('Davao');
+                } else if (province === 'camsur') {
+                    addDepartureAirport('Manila');
+                    addDepartureAirport('Cebu');
+                    addDepartureAirport('Clark');
+                }
+            });
+
+            function addDepartureAirport(airport) {
+                const option = document.createElement('option');
+                option.value = airport.toLowerCase().replace(/\s+/g, '-');
+                option.textContent = airport;
+                departureAirportSelect.appendChild(option);
+            }
+
+            // Calculate total amount
+            function calculateTotal() {
+                const province = provinceSelect.value;
+                const flightClass = flightClassSelect.value;
+                const departureDate = new Date(departureDateInput.value);
+                const returnDate = new Date(returnDateInput.value);
+
+                if (!province || !flightClass || !departureDateInput.value || !returnDateInput.value) {
+                    return;
+                }
+
+                const days = Math.ceil((returnDate - departureDate) / (1000 * 60 * 60 * 24)) + 1;
+
+                let baseFare = 0;
+                let taxesAndFees = 0;
+                if (province === 'bicol') {
+                    if (flightClass === 'economy') baseFare = 2999;
+                    else if (flightClass === 'business') baseFare = 8500;
+                    else if (flightClass === 'first') baseFare = 12500;
+                } else if (province === 'iloilo') {
+                    if (flightClass === 'economy') baseFare = 2499;
+                    else if (flightClass === 'business') baseFare = 7800;
+                    else if (flightClass === 'first') baseFare = 11900;
+                } else if (province === 'camsur') {
+                    if (flightClass === 'economy') baseFare = 2299;
+                    else if (flightClass === 'business') baseFare = 7200;
+                    else if (flightClass === 'first') baseFare = 10900;
+                }
+
+                taxesAndFees = baseFare * 0.12; // Assuming a 12% tax rate
+                const total = baseFare + taxesAndFees;
+
+                baseFareSpan.textContent = `₱${baseFare.toLocaleString()}`;
+                taxesAndFeesSpan.textContent = `₱${taxesAndFees.toLocaleString()}`;
+                totalAmountSpan.textContent = `₱${total.toLocaleString()}`;
+            }
+
+            // Update total when flight class changes
+            flightClassSelect.addEventListener('change', calculateTotal);
+
+            // Form submission
+            document.getElementById('transportationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Booking request submitted successfully! We will contact you shortly.');
+                this.reset();
+            });
+
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('backToTop');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Show button when scrolling down
+                if (scrollTop > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                // Hide button when scrolling up
+                if (scrollTop < lastScrollTop) {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Scroll to top when button is clicked
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

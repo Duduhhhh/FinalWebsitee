@@ -1,0 +1,4404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Tours - ServPro Consolidated Inc.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo" style="width: 200px;">
+            <a href="index.html">
+                <img src="imgs/Servpro Travels Logo.png" alt="ServPro Logo" style="width: 100%; height: auto;">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <div class="dropdown">
+                <a href="#" class="active">Services <span class="dropdown-arrow">▾</span></a>
+                <div class="dropdown-content">
+                    <a href="airconditioners.html">Air Conditioner</a>
+                    <a href="travelandtour.html" class="active">Travel & Tours</a>
+                    <a href="cctvalarm.html">CCTV Alarm</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <div class="dropdown">
+                <a href="#contact" class="contact-btn">Contact Us <span class="dropdown-arrow">▾</span></a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="openContactModal('call')"><i class="fas fa-phone"></i> Call Us</a>
+                    <a href="#" onclick="openContactModal('email')"><i class="fas fa-envelope"></i> Email Us</a>
+                    <a href="https://www.facebook.com/servproairconditioning" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=0178+ServPro+Consolidated+Inc+Querubin+Subdivision+Ibayo+Silangan+Naic+Cavite+4110" target="_blank"><i class="fas fa-map-marker-alt"></i> Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="travel-hero">
+          <div class="travel-hero-inner">
+            <div class="hero-image">
+              <img src="imgs/How-High-Do-Airplanes-Go.png" alt="Airplane flying" />
+            </div>
+            <div class="hero-content">
+              <h1>
+                <span class="highlight">Explore</span> with Us
+              </h1>
+              <p>
+                Discover breathtaking destinations and create unforgettable memories with our curated travel experiences.
+              </p>
+              <div class="hero-cta">
+                <a href="#best-packages" class="cta-button primary">Explore Tours</a>
+                <a href="#contact" class="cta-button secondary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <style>
+        .travel-hero {
+          background: linear-gradient(120deg, #f8f9fa 0%, #e3f0ff 100%);
+          min-height: 480px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 0;
+          position: relative;
+          overflow: hidden;
+        }
+        .travel-hero-inner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 1200px;
+          width: 100%;
+          gap: 60px;
+          flex-wrap: wrap;
+        }
+        .hero-image img {
+          width: 380px;
+          max-width: 90vw;
+          filter: drop-shadow(0 8px 32px rgba(0,87,184,0.12));
+          animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0);}
+          50% { transform: translateY(-12px);}
+        }
+        .hero-content {
+          max-width: 500px;
+          text-align: left;
+        }
+        .hero-content h1 {
+          font-size: 3.2em;
+          font-weight: 800;
+          color: #222;
+          margin-bottom: 18px;
+          line-height: 1.1;
+        }
+        .hero-content .highlight {
+          color: #0057B8;
+          background: #FFD800;
+          padding: 0 10px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px #ffd80033;
+        }
+        .hero-content p {
+          font-size: 1.25em;
+          color: #555;
+          margin-bottom: 32px;
+          text-shadow: 0 1px 2px #fff8;
+        }
+        .hero-cta {
+          display: flex;
+          gap: 18px;
+        }
+        .cta-button {
+          display: inline-block;
+          padding: 14px 32px;
+          border-radius: 30px;
+          font-weight: 700;
+          font-size: 1.1em;
+          text-decoration: none;
+          transition: all 0.2s;
+          box-shadow: 0 2px 8px #0057b81a;
+        }
+        .cta-button.primary {
+          background: #0057B8;
+          color: #fff;
+          border: none;
+        }
+        .cta-button.primary:hover {
+          background: #003d82;
+          box-shadow: 0 4px 16px #0057b833;
+        }
+        .cta-button.secondary {
+          background: #fff;
+          color: #0057B8;
+          border: 2px solid #0057B8;
+        }
+        .cta-button.secondary:hover {
+          background: #FFD800;
+          color: #222;
+          border-color: #FFD800;
+        }
+        @media (max-width: 900px) {
+          .travel-hero-inner {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+          }
+          .hero-content {
+            text-align: center;
+          }
+        }
+        </style>
+
+        <!-- Quick Access Buttons -->
+        <section class="quick-access-buttons">
+            <div class="button-container">
+                <a href="#services" class="quick-button">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Travel Services</span>
+                </a>
+                <a href="#featured-destinations" class="quick-button">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Destinations</span>
+                </a>
+                <a href="#best-packages" class="quick-button">
+                    <i class="fas fa-box"></i>
+                    <span>Packages and Activities</span>
+                </a>
+                <a href="#activities" class="quick-button">
+                    <i class="fas fa-hiking"></i>
+                    <span>Booking</span>
+                </a>
+                <a href="#travel-packages" class="quick-button">
+                    <i class="fas fa-plane"></i>
+                    <span>Feedback</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="services-title">OUR TRAVEL SERVICES</h2>
+                <p class="services-description">We offer a comprehensive range of travel services to make your journey memorable and hassle-free.</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Flight Bookings</h3>
+                        <p>Secure the best deals on flights to destinations worldwide with our extensive network of airline partners.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3>Ferry Services</h3>
+                        <p>Explore island destinations with our convenient and comfortable ferry booking services.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Guided Tours</h3>
+                        <p>Discover hidden gems and popular attractions with our expert local guides who bring destinations to life.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Hotel Accommodations</h3>
+                        <p>Rest in comfort with our carefully selected range of accommodations to suit every budget and preference.</p>
+                    </div>
+                </div>
+
+                <!-- Featured Services -->
+                <div class="featured-services">
+                    <h2>Travel & Tours Services</h2>
+                    <p>Our travel and tours division offers comprehensive services to make your journey memorable and hassle-free.</p>
+
+                    <div class="services-content">
+                        <div class="services-image">
+                            <img src="imgs/servproposter.png" alt="ServPro Travel Poster 1" class="poster">
+                        </div>
+
+                        <div class="why-choose-us">
+                            <h3>Why Choose Our Travel Services?</h3>
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="feature-text">
+                                        <h4>Philippine Travel Specialists</h4>
+                                        <p>Our team has extensive knowledge of the Philippines, ensuring authentic and unforgettable local experiences.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="feature-text">
+                                        <h4>Personalized Experiences</h4>
+                                        <p>We tailor each itinerary to your preferences, ensuring a unique and memorable journey.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="feature-text">
+                                        <h4>Competitive Pricing</h4>
+                                        <p>We offer the best value for your travel budget without compromising on quality.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-categories">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-plane-departure"></i>
+                            </div>
+                            <h3>Plane & Ferry Tickets</h3>
+                            <p>Book your plane and ferry tickets with us for the best rates and convenient travel arrangements.</p>
+                            <ul class="category-features">
+                                <li><i class="fas fa-check"></i> Domestic and international flights</li>
+                                <li><i class="fas fa-check"></i> Ferry bookings to various destinations</li>
+                                <li><i class="fas fa-check"></i> Group booking discounts</li>
+                            </ul>
+                            <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-suitcase-rolling"></i>
+                            </div>
+                            <h3>Tour Packages</h3>
+                            <p>Comprehensive tour packages for individuals, families, and groups to various destinations.</p>
+                            <ul class="category-features">
+                                <li><i class="fas fa-check"></i> All-inclusive vacation packages</li>
+                                <li><i class="fas fa-check"></i> Customized itineraries</li>
+                                <li><i class="fas fa-check"></i> Group tours with experienced guides</li>
+                            </ul>
+                            <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Provincial Bookings Section -->
+        <section class="provincial-bookings" id="provincial-bookings">
+            <div class="container">
+                <h2 class="section-title">PROVINCIAL BOOKINGS</h2>
+                <p class="section-subtitle">Explore our curated provincial destinations and packages</p>
+
+                <div class="province-grid">
+                    <!-- Bicol Region -->
+                    <div class="province-card">
+                        <div class="province-header">
+                            <img src="imgs/bicol.jpg" alt="Bicol Region">
+                            <div class="province-overlay">
+                                <h3>Bicol Region</h3>
+                            </div>
+                        </div>
+                        <div class="province-content">
+                            <div class="province-packages">
+                                <h4>Flight Options</h4>
+                                <ul>
+                                    <li>
+                                        <span class="package-name">Economy Class</span>
+                                        <span class="package-price">From ₱2,999</span>
+                                    </li>
+                                    <li>
+                                        <span class="package-name">Business Class</span>
+                                        <span class="package-price">From ₱8,500</span>
+                                    </li>
+                                    <li>
+                                        <span class="package-name">First Class</span>
+                                        <span class="package-price">From ₱12,500</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="province-features">
+                                <h4>Flight Schedule</h4>
+                                <ul>
+                                    <li><i class="fas fa-plane-departure"></i> Manila - Legazpi: Daily</li>
+                                    <li><i class="fas fa-plane-departure"></i> Cebu - Legazpi: Mon, Wed, Fri</li>
+                                    <li><i class="fas fa-plane-departure"></i> Clark - Legazpi: Tue, Thu, Sat</li>
+                                </ul>
+                            </div>
+                            <a href="booktransportation.html" class="book-province-btn">Book Flight</a>
+                        </div>
+                    </div>
+
+                    <!-- Iloilo -->
+                    <div class="province-card">
+                        <div class="province-header">
+                            <img src="imgs/iloilo.jpg" alt="Iloilo">
+                            <div class="province-overlay">
+                                <h3>Iloilo</h3>
+                            </div>
+                        </div>
+                        <div class="province-content">
+                            <div class="province-packages">
+                                <h4>Flight Options</h4>
+                                <ul>
+                                    <li>
+                                        <span class="package-name">Economy Class</span>
+                                        <span class="package-price">From ₱2,499</span>
+                                    </li>
+                                    <li>
+                                        <span class="package-name">Business Class</span>
+                                        <span class="package-price">From ₱7,800</span>
+                                    </li>
+                                    <li>
+                                        <span class="package-name">First Class</span>
+                                        <span class="package-price">From ₱11,900</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="province-features">
+                                <h4>Flight Schedule</h4>
+                                <ul>
+                                    <li><i class="fas fa-plane-departure"></i> Manila - Iloilo: Daily</li>
+                                    <li><i class="fas fa-plane-departure"></i> Cebu - Iloilo: Tue, Thu, Sun</li>
+                                    <li><i class="fas fa-plane-departure"></i> Davao - Iloilo: Mon, Fri</li>
+                                </ul>
+                            </div>
+                            <a href="booktransportation.html" class="book-province-btn">Book Flight</a>
+                        </div>
+                    </div>
+
+                    <!-- Camarines Sur -->
+                    <div class="province-card">
+                        <div class="province-header">
+                            <img src="imgs/camsur.jpg" alt="Camarines Sur">
+                            <div class="province-overlay">
+                                <h3>Camarines Sur</h3>
+                            </div>
+                        </div>
+                        <div class="province-content">
+                            <div class="province-packages">
+                                <h4>Flight Options</h4>
+                                <ul>
+                                    <li>
+                                        <span class="package-name">Economy Class</span>
+                                        <span class="package-price">From ₱2,299</span>
+                                    </li>
+                                    <li>
+                                        <span class="package-name">Business Class</span>
+                                        <span class="package-price">From ₱7,200</span>
+                                    </li>
+                                    <li>
+                                        <span class="package-name">First Class</span>
+                                        <span class="package-price">From ₱10,900</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="province-features">
+                                <h4>Flight Schedule</h4>
+                                <ul>
+                                    <li><i class="fas fa-plane-departure"></i> Manila - Naga: Daily</li>
+                                    <li><i class="fas fa-plane-departure"></i> Cebu - Naga: Wed, Sat</li>
+                                    <li><i class="fas fa-plane-departure"></i> Clark - Naga: Mon, Thu</li>
+                                </ul>
+                            </div>
+                            <a href="booktransportation.html" class="book-province-btn">Book Flight</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Provincial Bookings Styles */
+            .provincial-bookings {
+                padding: 80px 0;
+                background-color: #f9f9f9;
+            }
+
+            .province-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .province-card {
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .province-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .province-header {
+                position: relative;
+                height: 200px;
+            }
+
+            .province-header img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .province-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+                padding: 20px;
+            }
+
+            .province-overlay h3 {
+                color: white;
+                margin: 0;
+                font-size: 1.8em;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            }
+
+            .province-content {
+                padding: 20px;
+            }
+
+            .province-packages h4,
+            .province-features h4 {
+                color: #333;
+                margin: 0 0 15px;
+                font-size: 1.2em;
+            }
+
+            .province-packages ul {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 20px;
+            }
+
+            .province-packages li {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .package-name {
+                color: #666;
+            }
+
+            .package-price {
+                color: #0057B8;
+                font-weight: 600;
+            }
+
+            .province-features ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .province-features li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #666;
+            }
+
+            .province-features i {
+                color: #0057B8;
+            }
+
+            .book-province-btn {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                background: #0057B8;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 20px;
+                transition: background 0.3s ease;
+            }
+
+            .book-province-btn:hover {
+                background: #003d82;
+            }
+
+            @media (max-width: 768px) {
+                .province-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .province-features ul {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <!-- Best Packages Section -->
+        <section class="best-packages" id="best-packages">
+            <div class="container">
+                <h2 class="section-title">BEST PACKAGES</h2>
+                <p class="section-subtitle">Choose from our curated selection of travel packages</p>
+                
+                <div class="packages-layout">
+                    <!-- Filter Sidebar -->
+                    <div class="filter-sidebar">
+                        <h3>Filter</h3>
+                        <!-- Destination Filter -->
+                        <div class="filter-group">
+                            <button class="filter-button" onclick="toggleFilter('destination-options')">
+                                <span>Destination</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="filter-options" id="destination-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="destination" value="boracay">
+                                    <span>Boracay</span>
+                                    <span class="count">(3)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="destination" value="palawan">
+                                    <span>Palawan</span>
+                                    <span class="count">(4)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="destination" value="bohol">
+                                    <span>Bohol</span>
+                                    <span class="count">(3)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="destination" value="cebu">
+                                    <span>Cebu</span>
+                                    <span class="count">(2)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Package Type Filter -->
+                        <div class="filter-group">
+                            <button class="filter-button" onclick="toggleFilter('package-type-options')">
+                                <span>Package Type</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="filter-options" id="package-type-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="type" value="all-inclusive">
+                                    <span>All-Inclusive</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="type" value="adventure">
+                                    <span>Adventure</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="type" value="relaxation">
+                                    <span>Relaxation</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="type" value="family">
+                                    <span>Family</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Duration Filter -->
+                        <div class="filter-group">
+                            <button class="filter-button" onclick="toggleFilter('duration-options')">
+                                <span>Duration</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="filter-options" id="duration-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="duration" value="3-4">
+                                    <span>3-4 Days</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="duration" value="5-7">
+                                    <span>5-7 Days</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="duration" value="8+">
+                                    <span>8+ Days</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <button class="filter-button" onclick="toggleFilter('price-options')">
+                                <span>Price Range</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="filter-options" id="price-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="under-10000">
+                                    <span>Under ₱10,000</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="10000-20000">
+                                    <span>₱10,000 - ₱20,000</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="20000-30000">
+                                    <span>₱20,000 - ₱30,000</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="30000-50000">
+                                    <span>₱30,000 - ₱50,000</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="above-50000">
+                                    <span>Above ₱50,000</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Packages Grid -->
+                    <div class="packages-grid-container">
+                        <div class="packages-header">
+                            <span>Showing 1-12 of 12 Packages</span>
+                            <div class="packages-view-options">
+                                <span>Sort by: Price, Low to high</span>
+                                <div class="view-buttons">
+                                    <button class="view-btn grid active">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                    <button class="view-btn list">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="packages-grid">
+                            <!-- Package 1: Boracay All-Inclusive -->
+                            <div class="package-card" data-destination="boracay" data-type="all-inclusive" data-duration="3-4" data-price="15000">
+                                <div class="package-image">
+                                    <img src="imgs/boracay.jpg" alt="Boracay Beach">
+                                    <div class="package-tag">Popular</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Boracay All-Inclusive Getaway</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>3 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 4</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8 (120)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Experience the beautiful white sand beaches and crystal clear waters of Boracay with our all-inclusive package.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱15,000</span>
+                                        <a href="booking.html?package=boracay&title=Boracay All-Inclusive Getaway&price=15000&duration=3&nights=2" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 2: Palawan Adventure -->
+                            <div class="package-card" data-destination="palawan" data-type="adventure" data-duration="5-7" data-price="25000">
+                                <div class="package-image">
+                                    <img src="imgs/palawan.jpg" alt="Palawan Adventure">
+                                    <div class="package-tag">Best Value</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Palawan Island Hopping Adventure</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>5 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 6</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 (85)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Explore the breathtaking landscapes of Palawan with activities like island hopping, snorkeling, and cave explorations.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱25,000</span>
+                                        <a href="booking.html?package=palawan&title=Palawan Island Hopping Adventure&price=25000&duration=5&nights=4" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 3: Bohol Family -->
+                            <div class="package-card" data-destination="bohol" data-type="family" data-duration="3-4" data-price="18000">
+                                <div class="package-image">
+                                    <img src="imgs/bohol.jpg" alt="Bohol Family">
+                                    <div class="package-tag">Family</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Bohol Family Adventure</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>4 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 8</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.7 (92)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Perfect family getaway with visits to the Chocolate Hills, tarsier sanctuary, and Loboc River cruise.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱18,000</span>
+                                        <a href="booking.html?package=bohol&title=Bohol Family Adventure&price=18000&duration=4&nights=3" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 4: Cebu Relaxation -->
+                            <div class="package-card" data-destination="cebu" data-type="relaxation" data-duration="5-7" data-price="22000">
+                                <div class="package-image">
+                                    <img src="imgs/cebu.jpg" alt="Cebu Relaxation">
+                                    <div class="package-tag">Luxury</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Cebu Luxury Retreat</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>6 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 2</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 (75)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Indulge in luxury accommodations, spa treatments, and private beach access in Cebu's finest resorts.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱22,000</span>
+                                        <a href="booking.html?package=cebu&title=Cebu Luxury Retreat&price=22000&duration=6&nights=5" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 5: Siargao Adventure -->
+                            <div class="package-card" data-destination="siargao" data-type="adventure" data-duration="5-7" data-price="28000">
+                                <div class="package-image">
+                                    <img src="imgs/siargao.jpg" alt="Siargao Adventure">
+                                    <div class="package-tag">Adventure</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Siargao Surf & Adventure</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>7 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 4</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8 (68)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Experience world-class surfing, island hopping, and adventure activities in the surfing capital of the Philippines.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱28,000</span>
+                                        <a href="booking.html?package=siargao&title=Siargao Surf & Adventure&price=28000&duration=7&nights=6" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 6: Boracay Honeymoon -->
+                            <div class="package-card" data-destination="boracay" data-type="relaxation" data-duration="3-4" data-price="35000">
+                                <div class="package-image">
+                                    <img src="imgs/boracay.jpg" alt="Boracay Honeymoon">
+                                    <div class="package-tag">Honeymoon</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Boracay Romantic Escape</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>4 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 2</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 (95)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Romantic getaway package with private dinners, couple's spa treatments, and luxury accommodations.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱35,000</span>
+                                        <a href="booking.html?package=boracay&title=Boracay Romantic Escape&price=35000&duration=4&nights=3" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 7: Palawan All-Inclusive -->
+                            <div class="package-card" data-destination="palawan" data-type="all-inclusive" data-duration="5-7" data-price="32000">
+                                <div class="package-image">
+                                    <img src="imgs/palawan.jpg" alt="Palawan All-Inclusive">
+                                    <div class="package-tag">All-Inclusive</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Palawan All-Inclusive Paradise</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>5 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 4</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8 (110)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">All-inclusive package featuring luxury accommodations, meals, and activities in El Nido and Coron.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱32,000</span>
+                                        <a href="booking.html?package=palawan&title=Palawan All-Inclusive Paradise&price=32000&duration=5&nights=4" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 8: Bohol Adventure -->
+                            <div class="package-card" data-destination="bohol" data-type="adventure" data-duration="3-4" data-price="20000">
+                                <div class="package-image">
+                                    <img src="imgs/bohol.jpg" alt="Bohol Adventure">
+                                    <div class="package-tag">Adventure</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Bohol Adventure Package</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>4 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 6</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.7 (88)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Thrilling adventure package including river kayaking, ATV rides, and cliff diving.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱20,000</span>
+                                        <a href="booking.html?package=bohol&title=Bohol Adventure Package&price=20000&duration=4&nights=3" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 9: Cebu Family -->
+                            <div class="package-card" data-destination="cebu" data-type="family" data-duration="5-7" data-price="25000">
+                                <div class="package-image">
+                                    <img src="imgs/cebu.jpg" alt="Cebu Family">
+                                    <div class="package-tag">Family</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Cebu Family Fun Package</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>5 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 6</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8 (102)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Family-friendly package with visits to amusement parks, whale shark watching, and beach activities.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱25,000</span>
+                                        <a href="booking.html?package=cebu&title=Cebu Family Fun Package&price=25000&duration=5&nights=4" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Package 10: Siargao Relaxation -->
+                            <div class="package-card" data-destination="siargao" data-type="relaxation" data-duration="5-7" data-price="30000">
+                                <div class="package-image">
+                                    <img src="imgs/siargao.jpg" alt="Siargao Relaxation">
+                                    <div class="package-tag">Luxury</div>
+                                </div>
+                                <div class="package-content">
+                                    <h3>Siargao Wellness Retreat</h3>
+                                    <div class="package-details">
+                                        <div class="detail">
+                                            <i class="far fa-clock"></i>
+                                            <span>6 Days</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Up to 2</span>
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 (78)</span>
+                                        </div>
+                                    </div>
+                                    <p class="package-description">Wellness retreat package featuring yoga sessions, spa treatments, and healthy dining options.</p>
+                                    <div class="package-footer">
+                                        <span class="package-price">From ₱30,000</span>
+                                        <a href="booking.html?package=siargao&title=Siargao Wellness Retreat&price=30000&duration=6&nights=5" class="book-now-btn">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="goToSlide(0)"></span>
+                        <span class="indicator" onclick="goToSlide(1)"></span>
+                        <span class="indicator" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Tips Section -->
+        <section class="travel-tips" id="travel-tips">
+            <div class="container">
+                <h2 class="section-title">TRAVEL TIPS & GUIDES</h2>
+                <p class="section-subtitle">Essential information for your journey</p>
+
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Best Time to Visit</h3>
+                        <ul class="tip-list">
+                            <li>Dry Season: December to May</li>
+                            <li>Peak Season: March to May</li>
+                            <li>Monsoon: June to November</li>
+                            <li>Best Deals: June to September</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>Budget Planning</h3>
+                        <ul class="tip-list">
+                            <li>Budget: ₱2,000-3,000/day</li>
+                            <li>Mid-range: ₱4,000-6,000/day</li>
+                            <li>Luxury: ₱8,000+/day</li>
+                            <li>Transportation: ₱500-1,000/day</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-suitcase-rolling"></i>
+                        </div>
+                        <h3>Packing Essentials</h3>
+                        <ul class="tip-list">
+                            <li>Light, breathable clothing</li>
+                            <li>Sun protection</li>
+                            <li>Insect repellent</li>
+                            <li>Universal adapter</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Local Customs</h3>
+                        <ul class="tip-list">
+                            <li>Respectful dress code</li>
+                            <li>Remove shoes indoors</li>
+                            <li>Elder respect: "Po/Opo"</li>
+                            <li>Tipping: 10-15%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            
+
+        <!-- Booking Process Section -->
+        <section class="booking-process" id="booking-process">
+            <div class="container">
+                <h2 class="section-title">HOW TO BOOK</h2>
+                <p class="section-subtitle">Simple steps to plan your perfect trip</p>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Choose Your Package</h3>
+                        <p>Browse through our curated selection of travel packages and destinations.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Select Dates</h3>
+                        <p>Pick your preferred travel dates and check availability.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h3>Fill Details</h3>
+                        <p>Provide necessary information and special requirements.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Secure Payment</h3>
+                        <p>Complete your booking with our secure payment system.</p>
+                    </div>
+                </div>
+
+                <div class="booking-cta">
+                    <p>Ready to start your adventure?</p>
+                    <a href="booking.html" class="cta-button">Book Your Trip Now</a>
+                </div>
+            </div>
+        </section>
+
+    <!-- Plane & Ferry Tickets Modal -->
+    <div id="planeAndFerryModal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Plane & Ferry Tickets</h2>
+            </div>
+            <div class="modal-body">
+                <div class="service-details">
+                    <div class="service-section">
+                        <h3><i class="fas fa-plane"></i> Flight Services</h3>
+                        <div class="service-info">
+                            <h4>Domestic Flights</h4>
+                            <ul>
+                                <li>Manila to Cebu</li>
+                                <li>Manila to Davao</li>
+                                <li>Manila to Boracay (Caticlan)</li>
+                                <li>Cebu to Davao</li>
+                                <li>Clark to Cebu</li>
+                            </ul>
+                            <p class="price-info">Starting from ₱2,999</p>
+                        </div>
+                        <div class="service-info">
+                            <h4>International Flights</h4>
+                            <ul>
+                                <li>Manila to Singapore</li>
+                                <li>Manila to Hong Kong</li>
+                                <li>Manila to Tokyo</li>
+                                <li>Manila to Seoul</li>
+                                <li>Cebu to Singapore</li>
+                            </ul>
+                            <p class="price-info">Starting from ₱8,999</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h3><i class="fas fa-ship"></i> Ferry Services</h3>
+                        <div class="service-info">
+                            <h4>Popular Ferry Routes</h4>
+                            <ul>
+                                <li>Batangas to Calapan</li>
+                                <li>Cebu to Bohol</li>
+                                <li>Manila to Coron</li>
+                                <li>Dumaguete to Siquijor</li>
+                                <li>Iloilo to Bacolod</li>
+                            </ul>
+                            <p class="price-info">Starting from ₱800</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h3><i class="fas fa-tag"></i> Special Offers</h3>
+                        <div class="offers-grid">
+                            <div class="offer-item">
+                                <div class="offer-tag">Save 20%</div>
+                                <h4>Early Bird Discount</h4>
+                                <p>Book 60 days in advance and save up to 20% on flights</p>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-tag">Group Deal</div>
+                                <h4>Group Booking</h4>
+                                <p>Special rates for groups of 10 or more</p>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-tag">Bundle & Save</div>
+                                <h4>Flight + Ferry Package</h4>
+                                <p>Save 15% when you book flight and ferry together</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h3><i class="fas fa-info-circle"></i> Booking Information</h3>
+                        <div class="booking-info">
+                            <div class="info-item">
+                                <h4>Required Documents</h4>
+                                <ul>
+                                    <li>Valid government-issued ID</li>
+                                    <li>Passport for international flights</li>
+                                    <li>Visa (if applicable)</li>
+                                </ul>
+                            </div>
+                            <div class="info-item">
+                                <h4>Cancellation Policy</h4>
+                                <ul>
+                                    <li>Free cancellation 72 hours before departure</li>
+                                    <li>50% refund for cancellations within 48-72 hours</li>
+                                    <li>No refund for cancellations less than 48 hours</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Modal Styles */
+        .service-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 0;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        .modal-header {
+            background: #0057B8;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #FFD700;
+        }
+
+        .service-section {
+            margin-bottom: 40px;
+        }
+
+        .service-section h3 {
+            color: #0057B8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        .service-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .service-info h4 {
+            color: #333;
+            margin: 0 0 15px;
+            font-size: 1.2em;
+        }
+
+        .service-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-info li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .service-info li:last-child {
+            border-bottom: none;
+        }
+
+        .price-info {
+            color: #0057B8;
+            font-weight: 600;
+            margin: 15px 0 0;
+            font-size: 1.1em;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .offer-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .offer-tag {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #FFD700;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .booking-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .info-item h4 {
+            color: #333;
+            margin: 0 0 15px;
+        }
+
+        .info-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-item li {
+            padding: 8px 0;
+            color: #666;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .info-item li:before {
+            content: "•";
+            color: #0057B8;
+            position: absolute;
+            left: 0;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .book-now-btn {
+            background: #0057B8;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .book-now-btn:hover {
+            background: #003d82;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 20px;
+                width: auto;
+            }
+
+            .offers-grid,
+            .booking-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // ... existing code ...
+
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('planeAndFerryModal');
+            const learnMoreBtn = document.querySelector('.category-card:first-child .learn-more');
+            const closeBtn = document.querySelector('.close-modal');
+
+            learnMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Travel & Tours Specific Styles */
+        .travel-hero {
+            background: linear-gradient(120deg, #f8f9fa 0%, #e3f0ff 100%);
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .travel-hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image img {
+            width: 380px;
+            max-width: 90vw;
+            filter: drop-shadow(0 8px 32px rgba(0,87,184,0.12));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0);}
+            50% { transform: translateY(-12px);}
+        }
+
+        .hero-content {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2em;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 18px;
+            line-height: 1.1;
+        }
+
+        .hero-content .highlight {
+            color: #0057B8;
+            background: #FFD800;
+            padding: 0 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ffd80033;
+        }
+
+        .hero-content p {
+            font-size: 1.25em;
+            color: #555;
+            margin-bottom: 32px;
+            text-shadow: 0 1px 2px #fff8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 18px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px #0057b81a;
+        }
+
+        .cta-button.primary {
+            background: #0057B8;
+            color: #fff;
+            border: none;
+        }
+
+        .cta-button.primary:hover {
+            background: #003d82;
+            box-shadow: 0 4px 16px #0057b833;
+        }
+
+        .cta-button.secondary {
+            background: #fff;
+            color: #0057B8;
+            border: 2px solid #0057B8;
+        }
+
+        .cta-button.secondary:hover {
+            background: #FFD800;
+            color: #222;
+            border-color: #FFD800;
+        }
+
+        @media (max-width: 900px) {
+            .travel-hero-inner {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+        }
+
+        /* Quick Access Buttons */
+        .quick-access-buttons {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .quick-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9em;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .quick-button i {
+            font-size: 1.2em;
+            color: #0057B8;
+        }
+
+        .quick-button:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-image img {
+                width: 30%;
+            }
+
+            .hero-content {
+                margin-left: 35%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-image img {
+                display: none;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-cta {
+                text-align: center;
+            }
+
+            .button-container {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+            .quick-button {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+        }
+
+        /* Section Common Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #0057B8;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Featured Destinations Section */
+        .featured-destinations {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .destination-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .destination-image {
+            position: relative;
+            height: 250px;
+        }
+
+        .destination-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 20px;
+        }
+
+        .destination-info {
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .destination-info h3 {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .destination-info p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .view-more-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            background-color: #0057B8;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #0057B8;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .view-more-btn:hover {
+            background-color: transparent;
+            color: #0057B8;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hidden destinations styles */
+        .hidden-destination {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Best Packages Section */
+        .best-packages {
+            padding: 80px 0;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .package-image {
+            position: relative;
+            height: 200px;
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .package-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #FFD800;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .package-content {
+            padding: 20px;
+        }
+
+        .package-content h3 {
+            margin: 0 0 15px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .package-details {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .detail {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .detail i {
+            color: #0057B8;
+        }
+
+        .package-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .package-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .package-price {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #0057B8;
+        }
+
+        .package-btn {
+            padding: 8px 15px;
+            background-color: #0057B8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .package-btn:hover {
+            background-color: #003d82;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .button-container {
+                gap: 2px;
+            }
+
+            .quick-button {
+                padding: 8px 10px;
+            }
+
+            .quick-button i {
+                font-size: 1.3em;
+            }
+
+            .quick-button span {
+                font-size: 0.75em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .destinations-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .destinations-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .destinations-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        /* Activities Section */
+        .activities-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .activity-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .activity-meta i {
+            color: #0057B8;
+        }
+
+        #activityModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .activity-section {
+            margin-bottom: 30px;
+        }
+
+        .activity-section h3 {
+            color: #0057B8;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .activity-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .activity-section ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .activity-section ul li:before {
+            content: "•";
+            color: #0057B8;
+            position: absolute;
+            left: 0;
+        }
+
+        .book-activity-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #0057B8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-activity-btn:hover {
+            background-color: #003d82;
+        }
+
+        /* Travel Tips Section */
+        .travel-tips {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-icon {
+            font-size: 2em;
+            color: #0057B8;
+            margin-bottom: 20px;
+        }
+
+        .tip-card h3 {
+            margin: 0 0 15px;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .tip-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tip-list li {
+            margin-bottom: 10px;
+            color: #666;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tip-list li:before {
+            content: "•";
+            color: #0057B8;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Special Offers Section */
+        .special-offers {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .offer-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .offer-tag {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #FFD800;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .offer-card h3 {
+            margin: 0 0 15px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .offer-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .offer-validity {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .offer-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0057B8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .offer-btn:hover {
+            background: #003d82;
+        }
+
+        /* Booking Process Section */
+        .booking-process {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #0057B8;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .step-icon {
+            font-size: 2em;
+            color: #0057B8;
+            margin: 20px 0;
+        }
+
+        .process-step h3 {
+            margin: 0 0 15px;
+            color: #333;
+        }
+
+        .process-step p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .booking-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .booking-cta p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .activities-grid,
+            .tips-grid,
+            .offers-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                padding: 20px;
+            }
+        }
+
+        /* Services Section Styles */
+        .services-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .services-title {
+            color: #0057B8;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .services-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #FFD800;
+            margin: 15px auto 0;
+        }
+
+        .services-description {
+            text-align: center;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 87, 184, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .service-icon i {
+            font-size: 2em;
+            color: #0057B8;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin: 0 0 15px;
+            font-size: 1.3em;
+        }
+
+        .service-card p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Featured Services Styles */
+        .featured-services {
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .featured-tag {
+            background: #0057B8;
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .featured-services h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .featured-services > p {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .services-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .services-image {
+            display: flex;
+            gap: 20px;
+        }
+
+        .poster {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-choose-us h3 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+        }
+
+        .features-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-item i {
+            color: #0057B8;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        .feature-text h4 {
+            color: #333;
+            margin: 0 0 5px;
+            font-size: 1.1em;
+        }
+
+        .feature-text p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Service Categories Styles */
+        .service-categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-icon {
+            color: #0057B8;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            color: #333;
+            margin: 0 0 15px;
+            font-size: 1.3em;
+        }
+
+        .category-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .category-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+
+        .category-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .category-features li i {
+            color: #0057B8;
+            font-size: 0.9em;
+        }
+
+        .learn-more {
+            color: #0057B8;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+
+        .learn-more:hover {
+            gap: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .services-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-image {
+                justify-content: center;
+            }
+
+            .service-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-services {
+                padding: 30px;
+            }
+
+            .services-image {
+                flex-direction: column;
+            }
+
+            .poster {
+                max-width: 100%;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f8f9fa;
+            padding: 50px 0 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 99;
+        }
+
+        footer.visible {
+            transform: translateY(0);
+        }
+
+        /* Add padding to main content to prevent footer overlap */
+        main {
+            padding-bottom: 200px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .footer-logo img {
+            width: 300px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            filter: brightness(1.1);
+        }
+
+        .footer-social h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0057B8;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+        }
+
+        .social-icons i {
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-logo img {
+                height: 50px;
+            }
+        }
+
+        /* Packages and Promos Section Styles */
+        .packages-promos {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .packages-promos .section-title {
+            font-size: 2em;
+            color: #0057B8;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .packages-promos .section-subtitle {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .packages-promos .section-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .packages-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        .filters-sidebar {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .filters-sidebar h4 {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-group h5 {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Sort Options Styles */
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .sort-by {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sort-by label {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .sort-by select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-width: 200px;
+            font-size: 0.95em;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 5px;
+        }
+
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .view-btn.active {
+            background: #0057B8;
+            color: #fff;
+            border-color: #0057B8;
+        }
+
+        /* Price Range Styles */
+        .price-range {
+            margin-bottom: 25px;
+        }
+
+        .price-range h5 {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .price-slider {
+            width: 100%;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .price-value {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Package Grid Styles */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Package Card Styles */
+        .package-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .package-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .package-tags {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .tag.promo {
+            background: #FFD700;
+            color: #000;
+        }
+
+        .tag.domestic {
+            background: #4CAF50;
+            color: #fff;
+        }
+
+        .tag.international {
+            background: #2196F3;
+            color: #fff;
+        }
+
+        .tag.explore {
+            background: #9C27B0;
+            color: #fff;
+        }
+
+        .package-details {
+            padding: 15px;
+        }
+
+        .package-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .package-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .rating-star {
+            color: #FFD700;
+            font-size: 1.2em;
+        }
+
+        .rating-value {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .package-duration {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .price-per {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .view-details {
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .compare-btn:disabled {
+            background: #ddd;
+            cursor: not-allowed;
+        }
+
+        .compare-btn:not(:disabled):hover {
+            background: #003d82;
+        }
+
+        /* Compare Modal */
+        .compare-modal-content {
+            max-width: 1200px;
+        }
+
+        .comparison-table {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .comparison-table td {
+            color: #666;
+        }
+
+        @media (max-width: 1024px) {
+            .promo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sort-options {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .sort-group {
+                width: 100%;
+            }
+
+            .sort-group select {
+                flex: 1;
+            }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-slots {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-wrapper {
+                gap: 15px;
+            }
+
+            .featured-package {
+                flex: 0 0 250px;
+            }
+        }
+
+        .hidden-destination {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .view-more-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .view-more-btn {
+            background-color: #0057B8;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-more-btn:hover {
+            background-color: #003d82;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .destination-info {
+            padding: 20px;
+        }
+
+        .destination-info h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .destination-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #0057B8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-details-btn:hover {
+            background-color: #003d82;
+        }
+
+        /* Filter Styles */
+        .packages-layout {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .filter-sidebar {
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-button {
+            width: 100%;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .filter-options {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .filter-options.active {
+            display: block;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        .filter-option input {
+            margin-right: 10px;
+        }
+
+        .filter-option .count {
+            margin-left: auto;
+            color: #666;
+        }
+
+        .packages-grid-container {
+            flex: 1;
+        }
+
+        .packages-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .view-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .view-btn {
+            padding: 8px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .view-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Add this to your existing styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0057B8;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top i {
+            font-size: 1.2em;
+        }
+    </style>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Add this to your existing script
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                if (scrollTop < lastScrollTop) {
+                    backToTopButton.classList.remove('visible');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- Tour Packages Modal -->
+    <div id="tourPackagesModal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Tour Packages</h2>
+            </div>
+            <div class="modal-body">
+                <div class="service-details">
+                    <div class="service-section">
+                        <h3><i class="fas fa-map-marked-alt"></i> Popular Tour Packages</h3>
+                        <div class="service-info">
+                            <h4>Island Hopping Tours</h4>
+                            <ul>
+                                <li>Boracay Island Hopping (3 Days)</li>
+                                <li>Palawan Underground River + Island Hopping</li>
+                                <li>Bohol Chocolate Hills + Loboc River Cruise</li>
+                                <li>Siargao Island Explorer</li>
+                                <li>Cebu Whale Shark + Kawasan Falls</li>
+                            </ul>
+                            <p class="price-info">Starting from ₱3,500</p>
+                        </div>
+                        <div class="service-info">
+                            <h4>Adventure Tours</h4>
+                            <ul>
+                                <li>Mount Pulag Hiking Expedition</li>
+                                <li>Banaue Rice Terraces Trek</li>
+                                <li>Davao White Water Rafting</li>
+                                <li>Bohol ATV Adventure</li>
+                                <li>Siargao Surfing Package</li>
+                            </ul>
+                            <p class="price-info">Starting from ₱4,500</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h3><i class="fas fa-hotel"></i> All-Inclusive Packages</h3>
+                        <div class="service-info">
+                            <h4>Luxury Getaways</h4>
+                            <ul>
+                                <li>Boracay 5-Star Resort Package</li>
+                                <li>Palawan Private Island Experience</li>
+                                <li>Bohol Luxury Villa Stay</li>
+                                <li>Cebu Premium Resort Package</li>
+                                <li>Siargao Boutique Hotel Package</li>
+                            </ul>
+                            <p class="price-info">Starting from ₱25,000</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h3><i class="fas fa-tag"></i> Special Tour Deals</h3>
+                        <div class="offers-grid">
+                            <div class="offer-item">
+                                <div class="offer-tag">Family Deal</div>
+                                <h4>Family Package</h4>
+                                <p>Free accommodation for children under 12</p>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-tag">Honeymoon</div>
+                                <h4>Romantic Getaway</h4>
+                                <p>Free couple's massage and dinner</p>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-tag">Group Discount</div>
+                                <h4>Group Tours</h4>
+                                <p>15% off for groups of 6 or more</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-section">
+                        <h3><i class="fas fa-info-circle"></i> Package Inclusions</h3>
+                        <div class="booking-info">
+                            <div class="info-item">
+                                <h4>What's Included</h4>
+                                <ul>
+                                    <li>Accommodation (based on package)</li>
+                                    <li>Daily breakfast</li>
+                                    <li>Transportation during tours</li>
+                                    <li>Professional tour guide</li>
+                                    <li>Entrance fees to attractions</li>
+                                </ul>
+                            </div>
+                            <div class="info-item">
+                                <h4>Booking Terms</h4>
+                                <ul>
+                                    <li>50% deposit required for booking</li>
+                                    <li>Full payment 7 days before tour</li>
+                                    <li>Free cancellation 14 days before</li>
+                                    <li>Weather-dependent activities may be rescheduled</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="book-now-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ... existing code ...
+
+        // Add Tour Packages Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tourModal = document.getElementById('tourPackagesModal');
+            const tourLearnMoreBtn = document.querySelector('.category-card:nth-child(2) .learn-more');
+            const tourCloseBtn = tourModal.querySelector('.close-modal');
+
+            tourLearnMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                tourModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+
+            tourCloseBtn.addEventListener('click', function() {
+                tourModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            window.addEventListener('click', function(e) {
+                if (e.target === tourModal) {
+                    tourModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Function to toggle filter options
+        function toggleFilter(filterId) {
+            const filterOptions = document.getElementById(filterId);
+            const allFilters = document.querySelectorAll('.filter-options');
+            
+            // Close other open filters
+            allFilters.forEach(filter => {
+                if (filter.id !== filterId && filter.classList.contains('active')) {
+                    filter.classList.remove('active');
+                    filter.previousElementSibling.querySelector('.arrow').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current filter
+            filterOptions.classList.toggle('active');
+            const arrow = filterOptions.previousElementSibling.querySelector('.arrow');
+            arrow.style.transform = filterOptions.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // Function to filter packages
+        function filterPackages() {
+            const packages = document.querySelectorAll('.package-card');
+            const selectedDestinations = Array.from(document.querySelectorAll('input[name="destination"]:checked')).map(cb => cb.value);
+            const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(cb => cb.value);
+            const selectedDurations = Array.from(document.querySelectorAll('input[name="duration"]:checked')).map(cb => cb.value);
+            const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(cb => cb.value);
+
+            packages.forEach(package => {
+                const packageDestination = package.dataset.destination;
+                const packageType = package.dataset.type;
+                const packageDuration = package.dataset.duration;
+                const packagePrice = parseInt(package.dataset.price);
+
+                let shouldShow = true;
+
+                // Destination filter
+                if (selectedDestinations.length > 0) {
+                    shouldShow = shouldShow && selectedDestinations.includes(packageDestination);
+                }
+
+                // Type filter
+                if (selectedTypes.length > 0) {
+                    shouldShow = shouldShow && selectedTypes.includes(packageType);
+                }
+
+                // Duration filter
+                if (selectedDurations.length > 0) {
+                    shouldShow = shouldShow && selectedDurations.includes(packageDuration);
+                }
+
+                // Price filter
+                if (selectedPrices.length > 0) {
+                    shouldShow = shouldShow && selectedPrices.some(priceRange => {
+                        const [min, max] = getPriceRange(priceRange);
+                        return (min === null || packagePrice >= min) && (max === null || packagePrice <= max);
+                    });
+                }
+
+                package.style.display = shouldShow ? 'block' : 'none';
+            });
+
+            updatePackageCount();
+        }
+
+        // Helper function to get price range values
+        function getPriceRange(priceRange) {
+            switch (priceRange) {
+                case 'under-10000':
+                    return [null, 10000];
+                case '10000-20000':
+                    return [10000, 20000];
+                case '20000-30000':
+                    return [20000, 30000];
+                case '30000-50000':
+                    return [30000, 50000];
+                case 'above-50000':
+                    return [50000, null];
+                default:
+                    return [null, null];
+            }
+        }
+
+        // Function to update package count
+        function updatePackageCount() {
+            const visiblePackages = document.querySelectorAll('.package-card[style="display: block"]').length;
+            const totalPackages = document.querySelectorAll('.package-card').length;
+            const packageCountElement = document.querySelector('.packages-header span');
+            packageCountElement.textContent = `Showing ${visiblePackages} of ${totalPackages} Packages`;
+        }
+
+        // Add event listeners to all filter checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', filterPackages);
+            });
+
+            // Close filters when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.filter-group')) {
+                    const activeFilters = document.querySelectorAll('.filter-options.active');
+                    activeFilters.forEach(filter => {
+                        filter.classList.remove('active');
+                        filter.previousElementSibling.querySelector('.arrow').style.transform = 'rotate(0deg)';
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Travel Insurance Section -->
+    <section class="travel-insurance" id="travel-insurance">
+        <div class="container">
+            <h2 class="section-title">TRAVEL INSURANCE</h2>
+            <p class="section-subtitle">Travel with peace of mind with our comprehensive insurance coverage</p>
+
+            <div class="insurance-grid">
+                <div class="insurance-card">
+                    <div class="insurance-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Basic Coverage</h3>
+                    <ul class="coverage-list">
+                        <li><i class="fas fa-check"></i> Trip Cancellation</li>
+                        <li><i class="fas fa-check"></i> Medical Emergencies</li>
+                        <li><i class="fas fa-check"></i> Lost Baggage</li>
+                        <li><i class="fas fa-check"></i> Flight Delays</li>
+                    </ul>
+                    <p class="price">From ₱500/day</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <div class="insurance-card premium">
+                    <div class="insurance-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Premium Coverage</h3>
+                    <ul class="coverage-list">
+                        <li><i class="fas fa-check"></i> All Basic Coverage</li>
+                        <li><i class="fas fa-check"></i> Adventure Sports</li>
+                        <li><i class="fas fa-check"></i> Emergency Evacuation</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                    <p class="price">From ₱1,000/day</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <div class="insurance-card">
+                    <div class="insurance-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Coverage</h3>
+                    <ul class="coverage-list">
+                        <li><i class="fas fa-check"></i> Family Plans</li>
+                        <li><i class="fas fa-check"></i> Corporate Groups</li>
+                        <li><i class="fas fa-check"></i> School Trips</li>
+                        <li><i class="fas fa-check"></i> Special Rates</li>
+                    </ul>
+                    <p class="price">Custom Quotes</p>
+                    <a href="#" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Travel Insurance Styles */
+        .travel-insurance {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .insurance-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .insurance-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .insurance-card.premium {
+            background: linear-gradient(135deg, #0057B8, #003d82);
+            color: white;
+        }
+
+        .insurance-icon {
+            font-size: 2.5em;
+            color: #0057B8;
+            margin-bottom: 20px;
+        }
+
+        .insurance-card.premium .insurance-icon {
+            color: #FFD700;
+        }
+
+        .coverage-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .coverage-list li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .coverage-list i {
+            color: #0057B8;
+        }
+
+        .insurance-card.premium .coverage-list i {
+            color: #FFD700;
+        }
+
+        .price {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0057B8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background: #003d82;
+        }
+
+        /* Virtual Tours Styles */
+        .virtual-tours {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .virtual-tours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .virtual-tour-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .virtual-tour-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tour-preview {
+            position: relative;
+            height: 200px;
+        }
+
+        .tour-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button i {
+            color: #0057B8;
+            font-size: 1.5em;
+        }
+
+        .play-button:hover {
+            background: #0057B8;
+        }
+
+        .play-button:hover i {
+            color: white;
+        }
+
+        .tour-info {
+            padding: 20px;
+        }
+
+        .tour-info h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .tour-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tour-meta {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .tour-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Loyalty Program Styles */
+        .loyalty-program {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .loyalty-content {
+            margin-top: 40px;
+        }
+
+        .loyalty-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2em;
+            color: #0057B8;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .benefit-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        .membership-tiers {
+            margin-bottom: 50px;
+        }
+
+        .membership-tiers h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .tier-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tier-card h4 {
+            color: #0057B8;
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        .tier-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .tier-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tier-card li {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .join-now {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .join-now h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .join-now p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #0057B8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .join-btn:hover {
+            background: #003d82;
+        }
+
+        @media (max-width: 768px) {
+            .insurance-grid,
+            .virtual-tours-grid,
+            .loyalty-benefits,
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tour-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+
+    <!-- Virtual Tours Section -->
+    <section class="virtual-tours" id="virtual-tours">
+        <div class="container">
+            <h2 class="section-title">VIRTUAL TOURS</h2>
+            <p class="section-subtitle">Experience destinations from the comfort of your home</p>
+
+            <div class="virtual-tours-grid">
+                <div class="virtual-tour-card">
+                    <div class="tour-preview">
+                        <img src="imgs/boracay-virtual.jpg" alt="Boracay Virtual Tour">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Boracay Island Tour</h3>
+                        <p>Explore the famous White Beach and crystal clear waters</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-clock"></i> 15 mins</span>
+                            <span><i class="fas fa-eye"></i> 360° View</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="virtual-tour-card">
+                    <div class="tour-preview">
+                        <img src="imgs/palawan-virtual.jpg" alt="Palawan Virtual Tour">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Palawan Underground River</h3>
+                        <p>Discover the UNESCO World Heritage Site</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-clock"></i> 20 mins</span>
+                            <span><i class="fas fa-eye"></i> 360° View</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="virtual-tour-card">
+                    <div class="tour-preview">
+                        <img src="imgs/bohol-virtual.jpg" alt="Bohol Virtual Tour">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Bohol Countryside</h3>
+                        <p>Visit the Chocolate Hills and Tarsier Sanctuary</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-clock"></i> 25 mins</span>
+                            <span><i class="fas fa-eye"></i> 360° View</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Section -->
+    <section class="loyalty-program" id="loyalty-program">
+        <div class="container">
+            <h2 class="section-title">LOYALTY PROGRAM</h2>
+            <p class="section-subtitle">Join our rewards program and earn points on every booking</p>
+
+            <div class="loyalty-content">
+                <div class="loyalty-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Earn Points</h3>
+                        <p>Get 1 point for every ₱100 spent on bookings</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Exclusive Discounts</h3>
+                        <p>Up to 20% off on selected packages</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>VIP Treatment</h3>
+                        <p>Priority booking and special services</p>
+                    </div>
+                </div>
+
+                <div class="membership-tiers">
+                    <h3>Membership Tiers</h3>
+                    <div class="tiers-grid">
+                        <div class="tier-card">
+                            <h4>Silver</h4>
+                            <p>0-5,000 points</p>
+                            <ul>
+                                <li>Basic rewards</li>
+                                <li>5% discount</li>
+                                <li>Email support</li>
+                            </ul>
+                        </div>
+
+                        <div class="tier-card">
+                            <h4>Gold</h4>
+                            <p>5,001-15,000 points</p>
+                            <ul>
+                                <li>Enhanced rewards</li>
+                                <li>10% discount</li>
+                                <li>Priority support</li>
+                            </ul>
+                        </div>
+
+                        <div class="tier-card">
+                            <h4>Platinum</h4>
+                            <p>15,001+ points</p>
+                            <ul>
+                                <li>Premium rewards</li>
+                                <li>20% discount</li>
+                                <li>VIP support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="join-now">
+                    <h3>Join Now</h3>
+                    <p>Sign up for free and start earning points on your next booking</p>
+                    <a href="#" class="join-btn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lowest Fare Alert Promo Section -->
+    <section class="lowest-fare-alert" style="background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%); padding: 60px 0 40px 0; text-align: center; position: relative;">
+        <div class="container">
+            <h3 style="color: #2d3ecb; font-size: 2em; font-weight: 700; margin-bottom: 0.2em; font-family: 'Poppins', sans-serif; text-shadow: 0 2px 8px rgba(0,0,0,0.08);">Fly Now, Save More!</h3>
+            <h1 style="font-family: 'Dancing Script', 'Poppins', cursive; font-size: 3.2em; color: #FFD800; font-weight: 700; margin-bottom: 1.5em; text-shadow: 0 2px 8px rgba(0,0,0,0.12);">Lowest Fare Alert</h1>
+            <div id="fare-countdown" style="font-size: 1.1em; color: #ff5252; font-weight: 600; margin-bottom: 2em;"></div>
+            <div class="fare-carousel" style="display: flex; justify-content: center; gap: 2.5em; flex-wrap: wrap;">
+                <!-- Card 1 -->
+                <div class="fare-card" style="background: white; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); width: 300px; padding: 0 0 30px 0; position: relative; overflow: hidden;">
+                    <span class="badge-new" style="position: absolute; top: 10px; right: 10px; background: #FFD800; color: #0057B8; font-weight: 700; padding: 6px 16px; border-radius: 20px; font-size: 0.95em; animation: pulse 1.2s infinite alternate; z-index: 2;">New!</span>
+                    <div style="position: relative;">
+                        <img src="imgs/caticlan.jpg" alt="Caticlan" style="width: 100%; height: 180px; object-fit: cover; border-radius: 18px 18px 0 0;">
+                        <div class="tape" style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 120px; height: 18px; background: #ffe066; border-radius: 6px; opacity: 0.85; cursor: pointer;" title="Special Fare! Limited Seats"></div>
+                    </div>
+                    <div style="padding: 18px 20px 0 20px;">
+                        <div style="font-size: 1.25em; color: #222; font-weight: 600; margin-bottom: 0.2em;">Manila <span style="font-size: 1.1em;">&#9992;</span> Caticlan</div>
+                        <div style="font-size: 1em; color: #888; margin-bottom: 0.7em;">From</div>
+                        <div style="font-size: 2em; color: #ffb300; font-weight: 800; letter-spacing: 1px; animation: fadeInPrice 1.2s;">₱1,290</div>
+                        <div class="star-rating" style="margin: 10px 0 5px 0; color: #FFD800; font-size: 1.1em;">
+                            ★★★★☆
+                        </div>
+                        <div class="testimonial" style="font-size: 0.95em; color: #666; margin-bottom: 10px;">"Great value! Quick and easy booking."</div>
+                        <button class="book-now-btn" style="background: #0057B8; color: white; border: none; padding: 10px 28px; border-radius: 5px; font-size: 1.1em; font-weight: 600; margin-bottom: 10px; cursor: pointer;">Book Now</button>
+                        <button class="view-details-btn" onclick="openFareModal(0)" style="background: #FFD800; color: #0057B8; border: none; padding: 8px 18px; border-radius: 5px; font-size: 1em; font-weight: 600; margin-left: 10px; cursor: pointer;">View Details</button>
+                        <div class="share-icons" style="margin-top: 10px;">
+                            <a href="#" title="Share on Facebook" style="color: #4267B2; margin-right: 10px;"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" title="Share on Messenger" style="color: #0084FF; margin-right: 10px;"><i class="fab fa-facebook-messenger"></i></a>
+                            <a href="#" title="Share on Twitter" style="color: #1DA1F2;"><i class="fab fa-twitter-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="fare-card" style="background: white; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); width: 300px; padding: 0 0 30px 0; position: relative; overflow: hidden;">
+                    <span class="badge-new" style="position: absolute; top: 10px; right: 10px; background: #FFD800; color: #0057B8; font-weight: 700; padding: 6px 16px; border-radius: 20px; font-size: 0.95em; animation: pulse 1.2s infinite alternate; z-index: 2;">New!</span>
+                    <div style="position: relative;">
+                        <img src="imgs/bacolod.jpg" alt="Bacolod" style="width: 100%; height: 180px; object-fit: cover; border-radius: 18px 18px 0 0;">
+                        <div class="tape" style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 120px; height: 18px; background: #ffe066; border-radius: 6px; opacity: 0.85; cursor: pointer;" title="Special Fare! Limited Seats"></div>
+                    </div>
+                    <div style="padding: 18px 20px 0 20px;">
+                        <div style="font-size: 1.25em; color: #222; font-weight: 600; margin-bottom: 0.2em;">Manila <span style="font-size: 1.1em;">&#9992;</span> Bacolod</div>
+                        <div style="font-size: 1em; color: #888; margin-bottom: 0.7em;">From</div>
+                        <div style="font-size: 2em; color: #ffb300; font-weight: 800; letter-spacing: 1px; animation: fadeInPrice 1.2s;">₱992</div>
+                        <div class="star-rating" style="margin: 10px 0 5px 0; color: #FFD800; font-size: 1.1em;">
+                            ★★★★★
+                        </div>
+                        <div class="testimonial" style="font-size: 0.95em; color: #666; margin-bottom: 10px;">"Smooth flight and great service!"</div>
+                        <button class="book-now-btn" style="background: #0057B8; color: white; border: none; padding: 10px 28px; border-radius: 5px; font-size: 1.1em; font-weight: 600; margin-bottom: 10px; cursor: pointer;">Book Now</button>
+                        <button class="view-details-btn" onclick="openFareModal(1)" style="background: #FFD800; color: #0057B8; border: none; padding: 8px 18px; border-radius: 5px; font-size: 1em; font-weight: 600; margin-left: 10px; cursor: pointer;">View Details</button>
+                        <div class="share-icons" style="margin-top: 10px;">
+                            <a href="#" title="Share on Facebook" style="color: #4267B2; margin-right: 10px;"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" title="Share on Messenger" style="color: #0084FF; margin-right: 10px;"><i class="fab fa-facebook-messenger"></i></a>
+                            <a href="#" title="Share on Twitter" style="color: #1DA1F2;"><i class="fab fa-twitter-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="fare-card" style="background: white; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); width: 300px; padding: 0 0 30px 0; position: relative; overflow: hidden;">
+                    <span class="badge-new" style="position: absolute; top: 10px; right: 10px; background: #FFD800; color: #0057B8; font-weight: 700; padding: 6px 16px; border-radius: 20px; font-size: 0.95em; animation: pulse 1.2s infinite alternate; z-index: 2;">New!</span>
+                    <div style="position: relative;">
+                        <img src="imgs/cebu.jpg" alt="Cebu" style="width: 100%; height: 180px; object-fit: cover; border-radius: 18px 18px 0 0;">
+                        <div class="tape" style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 120px; height: 18px; background: #ffe066; border-radius: 6px; opacity: 0.85; cursor: pointer;" title="Special Fare! Limited Seats"></div>
+                    </div>
+                    <div style="padding: 18px 20px 0 20px;">
+                        <div style="font-size: 1.25em; color: #222; font-weight: 600; margin-bottom: 0.2em;">Manila <span style="font-size: 1.1em;">&#9992;</span> Cebu</div>
+                        <div style="font-size: 1em; color: #888; margin-bottom: 0.7em;">From</div>
+                        <div style="font-size: 2em; color: #ffb300; font-weight: 800; letter-spacing: 1px; animation: fadeInPrice 1.2s;">₱868</div>
+                        <div class="star-rating" style="margin: 10px 0 5px 0; color: #FFD800; font-size: 1.1em;">
+                            ★★★★☆
+                        </div>
+                        <div class="testimonial" style="font-size: 0.95em; color: #666; margin-bottom: 10px;">"Affordable and reliable!"</div>
+                        <button class="book-now-btn" style="background: #0057B8; color: white; border: none; padding: 10px 28px; border-radius: 5px; font-size: 1.1em; font-weight: 600; margin-bottom: 10px; cursor: pointer;">Book Now</button>
+                        <button class="view-details-btn" onclick="openFareModal(2)" style="background: #FFD800; color: #0057B8; border: none; padding: 8px 18px; border-radius: 5px; font-size: 1em; font-weight: 600; margin-left: 10px; cursor: pointer;">View Details</button>
+                        <div class="share-icons" style="margin-top: 10px;">
+                            <a href="#" title="Share on Facebook" style="color: #4267B2; margin-right: 10px;"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" title="Share on Messenger" style="color: #0084FF; margin-right: 10px;"><i class="fab fa-facebook-messenger"></i></a>
+                            <a href="#" title="Share on Twitter" style="color: #1DA1F2;"><i class="fab fa-twitter-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fare Details Modal -->
+        <div id="fareModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+            <div style="background:white; border-radius:12px; max-width:400px; width:90%; padding:30px; position:relative; text-align:left;">
+                <span onclick="closeFareModal()" style="position:absolute; top:10px; right:18px; font-size:1.5em; color:#888; cursor:pointer;">&times;</span>
+                <h2 id="modalRoute" style="color:#0057B8; font-size:1.3em; margin-bottom:10px;"></h2>
+                <img id="modalImg" src="" alt="" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                <div id="modalPrice" style="font-size:1.5em; color:#ffb300; font-weight:700; margin-bottom:10px;"></div>
+                <div id="modalDetails" style="font-size:1em; color:#333; margin-bottom:10px;">Promo valid for selected dates. Includes 7kg hand-carry. Limited seats available. Non-refundable.</div>
+                <button onclick="closeFareModal()" style="background:#0057B8; color:white; border:none; padding:10px 24px; border-radius:5px; font-size:1em; font-weight:600; margin-top:10px; cursor:pointer;">Close</button>
+            </div>
+        </div>
+
+        <style>
+            @keyframes pulse { 0% { box-shadow: 0 0 0 0 #FFD80055; } 100% { box-shadow: 0 0 12px 6px #FFD80022; } }
+            @keyframes fadeInPrice { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+            @media (max-width: 900px) {
+                .fare-carousel { flex-direction: column; gap: 2em !important; }
+            }
+        </style>
+        <script>
+            // Countdown Timer
+            function startCountdown(endTime) {
+                function updateCountdown() {
+                    const now = new Date().getTime();
+                    const distance = endTime - now;
+                    if (distance < 0) {
+                        document.getElementById('fare-countdown').innerHTML = 'Promo ended!';
+                        return;
+                    }
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    document.getElementById('fare-countdown').innerHTML = `Promo ends in: <span style='color:#FFD800;'>${hours}h ${minutes}m ${seconds}s</span>`;
+                    setTimeout(updateCountdown, 1000);
+                }
+                updateCountdown();
+            }
+            // Set promo end time (e.g., 24 hours from now)
+            document.addEventListener('DOMContentLoaded', function() {
+                const endTime = new Date().getTime() + 24*60*60*1000;
+                startCountdown(endTime);
+            });
+            // Modal Details
+            const fareData = [
+                {route: 'Manila → Caticlan', img: 'imgs/caticlan.jpg', price: '₱1,290'},
+                {route: 'Manila → Bacolod', img: 'imgs/bacolod.jpg', price: '₱992'},
+                {route: 'Manila → Cebu', img: 'imgs/cebu.jpg', price: '₱868'}
+            ];
+            function openFareModal(idx) {
+                document.getElementById('modalRoute').innerText = fareData[idx].route;
+                document.getElementById('modalImg').src = fareData[idx].img;
+                document.getElementById('modalImg').alt = fareData[idx].route;
+                document.getElementById('modalPrice').innerText = fareData[idx].price;
+                document.getElementById('fareModal').style.display = 'flex';
+            }
+            function closeFareModal() {
+                document.getElementById('fareModal').style.display = 'none';
+            }
+        </script>
+    </section>
+    <!-- End Lowest Fare Alert Promo Section -->
+
+    <!-- Add these modals before the closing body tag -->
+    <div id="call-modal" class="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal('call')">&times;</span>
+            <h2>Contact Numbers</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="contact-details">
+                        <h3>Mobile Numbers</h3>
+                        <p>+63 917 154 8095</p>
+                        <p>+63 917 154 7753</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-details">
+                        <h3>Landline</h3>
+                        <p>(046) 430 2694</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-details">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 5:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="email-modal" class="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal('email')">&times;</span>
+            <h2>Send Us a Message</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="inquiry">General Inquiry</option>
+                        <option value="service">Service Request</option>
+                        <option value="quote">Request for Quote</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Contact Modal Styles */
+        .contact-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .contact-modal .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            position: relative;
+            animation: modalOpen 0.3s ease-out;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #0057B8;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-details h3 {
+            color: #0057B8;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .contact-form {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0057B8;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #0057B8;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #003d82;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-modal .modal-content {
+                width: 95%;
+                padding: 20px;
+                margin: 10% auto;
+            }
+        }
+    </style>
+
+    <script>
+        function openContactModal(type) {
+            document.getElementById(type + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal(type) {
+            document.getElementById(type + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('contact-modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Close the modal
+            closeContactModal('email');
+        });
+    </script>
+
+</body><footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="imgs/Servpro Travels Logo.png" alt="ServPro Logo">
+        </div>
+        
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Terms & Condition</a></li>
+            </ul>
+            <div class="social-links">
+                <h3>Follow our socials</h3>
+                <div class="social-icons">
+                    <a href="index.html" class="globe-icon"><i class="fas fa-globe"></i></a>
+                    <a href="https://www.facebook.com/servproairconditioning" target="_blank" class="facebook-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="instagram-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>0178 Servpro Consolidated Inc., Querubin Subdivision, Ibayo Silangan, Naic, 4110 Cavite</span>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <span>servproph.airconditioning@gmail.com</span>
+                </li>
+                <li>
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>+63 917 154 8095 / +63 917 154 7753</span>
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>(046) 430 2694</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ServPro Consolidated Inc. All rights reserved.</p>
+    </div>
+</footer>
+</main>
+</html>

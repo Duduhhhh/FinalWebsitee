@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Travel Package - ServPro Travel & Tours</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #ffd700;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --gradient-start: #2193b0;
+            --gradient-end: #6dd5ed;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .booking-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 100px !important;
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .booking-header h1 {
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .booking-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .form-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .form-section h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .package-card {
+            border: 1px solid #dee2e6;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .package-card:hover::before {
+            opacity: 1;
+        }
+
+        .package-card.selected {
+            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 86, 179, 0.1));
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-card h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .package-features li {
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-left: 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .package-features li:before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .text-primary {
+            color: var(--accent-color) !important;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .form-floating {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+        }
+
+        .date-picker-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .date-picker-container:hover {
+            border-color: var(--secondary-color);
+        }
+
+        .booking-summary {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #dee2e6;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--secondary-color);
+        }
+
+        .btn-book-now {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            border: none;
+            width: 100%;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-book-now:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-book-now::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+        }
+
+        .btn-book-now:hover::after {
+            transform: translateX(100%);
+            transition: transform 0.6s ease;
+        }
+
+        .amenities-section {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .form-check {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .form-check:hover {
+            background: rgba(0, 86, 179, 0.05);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .booking-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .booking-header {
+                padding: 1.5rem;
+            }
+
+            .booking-header h1 {
+                font-size: 2rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+
+            .package-card {
+                margin-bottom: 1rem;
+            }
+
+            .btn-book-now {
+                padding: 1rem 2rem;
+            }
+        }
+
+        /* Add animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .form-section:nth-child(2) { animation-delay: 0.2s; }
+        .form-section:nth-child(3) { animation-delay: 0.4s; }
+        .form-section:nth-child(4) { animation-delay: 0.6s; }
+
+        /* Add loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Add these new styles at the beginning of the style section */
+        .navbar {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem !important;
+            font-size: 1.1rem;
+        }
+
+        .btn-contact {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-20px);
+        }
+
+        .btn-back.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: white;
+        }
+
+        .navbar-brand img {
+            height: 150px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add Back Button -->
+    <a href="travel-tour.html" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+    </a>
+
+    <!-- Add Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="travel-tour.html">
+                <img src="imgs/travel-tourlogo.png" alt="ServPro Logo" height="150">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="travel-tour.html#destinations">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="travel-tour.html#packages">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="travel-tour.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-contact" href="travel-tour.html#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1>Book Your Travel Package</h1>
+            <p>Select your travel dates and package to begin your journey</p>
+        </div>
+
+        <form id="bookingForm">
+            <div class="form-section">
+                <h3>1. Select Your Package</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Boracay Getaway')">
+                            <h4>Boracay Getaway</h4>
+                            <p>4 Days / 3 Nights</p>
+                            <ul class="package-features">
+                                <li>White Beach Access</li>
+                                <li>Island Hopping Tour</li>
+                                <li>Water Activities</li>
+                            </ul>
+                            <p class="text-primary">₱31,500 per person</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Palawan Adventure')">
+                            <h4>Palawan Adventure</h4>
+                            <p>5 Days / 4 Nights</p>
+                            <ul class="package-features">
+                                <li>Underground River Tour</li>
+                                <li>El Nido Island Hopping</li>
+                                <li>Honda Bay Tour</li>
+                            </ul>
+                            <p class="text-primary">₱33,800 per person</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Cebu Experience')">
+                            <h4>Cebu Experience</h4>
+                            <p>4 Days / 3 Nights</p>
+                            <ul class="package-features">
+                                <li>Whale Shark Watching</li>
+                                <li>Kawasan Falls</li>
+                                <li>Historical City Tour</li>
+                            </ul>
+                            <p class="text-primary">₱29,500 per person</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Bohol Discovery')">
+                            <h4>Bohol Discovery</h4>
+                            <p>4 Days / 3 Nights</p>
+                            <ul class="package-features">
+                                <li>Chocolate Hills Tour</li>
+                                <li>Tarsier Sanctuary</li>
+                                <li>Loboc River Cruise</li>
+                            </ul>
+                            <p class="text-primary">₱27,500 per person</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Siargao Surf')">
+                            <h4>Siargao Surf</h4>
+                            <p>5 Days / 4 Nights</p>
+                            <ul class="package-features">
+                                <li>Surf Lessons</li>
+                                <li>Island Hopping</li>
+                                <li>Sugba Lagoon Tour</li>
+                            </ul>
+                            <p class="text-primary">₱32,500 per person</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Vigan Heritage')">
+                            <h4>Vigan Heritage</h4>
+                            <p>3 Days / 2 Nights</p>
+                            <ul class="package-features">
+                                <li>Historical Walking Tour</li>
+                                <li>Kalesa Ride</li>
+                                <li>Cultural Shows</li>
+                            </ul>
+                            <p class="text-primary">₱25,500 per person</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Batanes Explorer')">
+                            <h4>Batanes Explorer</h4>
+                            <p>4 Days / 3 Nights</p>
+                            <ul class="package-features">
+                                <li>North & South Batan Tour</li>
+                                <li>Sabtang Island Tour</li>
+                                <li>Local Village Visit</li>
+                            </ul>
+                            <p class="text-primary">₱35,500 per person</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Coron Island Life')">
+                            <h4>Coron Island Life</h4>
+                            <p>4 Days / 3 Nights</p>
+                            <ul class="package-features">
+                                <li>Kayangan Lake Visit</li>
+                                <li>Twin Lagoon Tour</li>
+                                <li>Wreck Diving</li>
+                            </ul>
+                            <p class="text-primary">₱30,500 per person</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="package-card" onclick="selectPackage(this, 'Caramoan Adventure')">
+                            <h4>Caramoan Adventure</h4>
+                            <p>4 Days / 3 Nights</p>
+                            <ul class="package-features">
+                                <li>Island Hopping</li>
+                                <li>Beach Camping</li>
+                                <li>Snorkeling</li>
+                            </ul>
+                            <p class="text-primary">₱28,500 per person</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>2. Select Your Room</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <select class="form-select" id="roomType" onchange="updateSummary()">
+                                <option value="">Select Room Type</option>
+                                <option value="standard">Standard Room (₱2,000/night)</option>
+                                <option value="deluxe">Deluxe Room (₱3,500/night)</option>
+                                <option value="suite">Suite Room (₱5,000/night)</option>
+                                <option value="family">Family Room (₱6,500/night)</option>
+                            </select>
+                            <label for="roomType">Room Type</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <select class="form-select" id="bedType" onchange="updateSummary()">
+                                <option value="">Select Bed Type</option>
+                                <option value="single">Single Bed</option>
+                                <option value="twin">Twin Beds</option>
+                                <option value="double">Double Bed</option>
+                                <option value="queen">Queen Bed</option>
+                                <option value="king">King Bed</option>
+                            </select>
+                            <label for="bedType">Bed Type</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="amenities-section mt-3">
+                    <h5 class="mb-3">Additional Amenities</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="extraBlanket" onchange="updateSummary()">
+                                <label class="form-check-label" for="extraBlanket">
+                                    Extra Blanket (₱200 per stay)
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="number" id="extraBlanketQty" value="1" min="1" max="5" style="width: 60px" onchange="updateSummary()">
+                                <label class="form-check-label" for="extraBlanketQty">
+                                    Quantity
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="extraPillow" onchange="updateSummary()">
+                                <label class="form-check-label" for="extraPillow">
+                                    Extra Pillow (₱150 per stay)
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="number" id="extraPillowQty" value="1" min="1" max="5" style="width: 60px" onchange="updateSummary()">
+                                <label class="form-check-label" for="extraPillowQty">
+                                    Quantity
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>3. Choose Your Dates</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="date-picker-container">
+                            <label for="checkIn">Check-in Date</label>
+                            <input type="text" id="checkIn" class="form-control" placeholder="Select check-in date">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="date-picker-container">
+                            <label for="checkOut">Check-out Date</label>
+                            <input type="text" id="checkOut" class="form-control" placeholder="Select check-out date">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="adults">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                            <label for="adults">Number of Adults</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <select class="form-select" id="children">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                            <label for="children">Number of Children</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>4. Personal Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                            <label for="firstName">First Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            <label for="lastName">Last Name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <label for="email">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                            <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                            <label for="phone">Phone Number</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="specialRequests" style="height: 100px" placeholder="Special Requests"></textarea>
+                    <label for="specialRequests">Special Requests (Optional)</label>
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <h3>Booking Summary</h3>
+                <div class="summary-item">
+                    <span>Selected Package:</span>
+                    <span id="summaryPackage">-</span>
+                </div>
+                <div class="summary-item">
+                    <span>Room Type:</span>
+                    <span id="summaryRoom">-</span>
+                </div>
+                <div class="summary-item">
+                    <span>Bed Type:</span>
+                    <span id="summaryBed">-</span>
+                </div>
+                <div class="summary-item">
+                    <span>Additional Amenities:</span>
+                    <span id="summaryAmenities">-</span>
+                </div>
+                <div class="summary-item">
+                    <span>Check-in Date:</span>
+                    <span id="summaryCheckIn">-</span>
+                </div>
+                <div class="summary-item">
+                    <span>Check-out Date:</span>
+                    <span id="summaryCheckOut">-</span>
+                </div>
+                <div class="summary-item">
+                    <span>Number of Guests:</span>
+                    <span id="summaryGuests">-</span>
+                </div>
+                <div class="total-price">
+                    <div class="summary-item">
+                        <span>Total Amount:</span>
+                        <span id="summaryTotal">₱0</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-book-now">
+                <i class="fas fa-calendar-check me-2"></i>Confirm Booking
+            </button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize date pickers
+        flatpickr("#checkIn", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr) {
+                // Update checkout min date
+                checkOutPicker.set("minDate", dateStr);
+                updateSummary();
+            }
+        });
+
+        const checkOutPicker = flatpickr("#checkOut", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            onChange: function() {
+                updateSummary();
+            }
+        });
+
+        // Package selection
+        function selectPackage(element, packageName) {
+            // Remove selected class from all packages
+            document.querySelectorAll('.package-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            // Add selected class to clicked package
+            element.classList.add('selected');
+            updateSummary();
+        }
+
+        // Update booking summary
+        function updateSummary() {
+            const selectedPackage = document.querySelector('.package-card.selected');
+            const checkInDate = document.getElementById('checkIn').value;
+            const checkOutDate = document.getElementById('checkOut').value;
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const roomType = document.getElementById('roomType');
+            const bedType = document.getElementById('bedType');
+            const extraBlanket = document.getElementById('extraBlanket');
+            const extraBlanketQty = document.getElementById('extraBlanketQty');
+            const extraPillow = document.getElementById('extraPillow');
+            const extraPillowQty = document.getElementById('extraPillowQty');
+
+            // Calculate number of nights
+            let numberOfNights = 0;
+            if (checkInDate && checkOutDate) {
+                const start = new Date(checkInDate);
+                const end = new Date(checkOutDate);
+                numberOfNights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+            }
+
+            // Update summary elements
+            document.getElementById('summaryPackage').textContent = 
+                selectedPackage ? selectedPackage.querySelector('h4').textContent : '-';
+            document.getElementById('summaryRoom').textContent = 
+                roomType.value ? roomType.options[roomType.selectedIndex].text : '-';
+            document.getElementById('summaryBed').textContent = 
+                bedType.value ? bedType.options[bedType.selectedIndex].text : '-';
+            
+            // Update amenities summary
+            let amenitiesSummary = [];
+            if (extraBlanket.checked) {
+                amenitiesSummary.push(`${extraBlanketQty.value} Extra Blanket(s)`);
+            }
+            if (extraPillow.checked) {
+                amenitiesSummary.push(`${extraPillowQty.value} Extra Pillow(s)`);
+            }
+            document.getElementById('summaryAmenities').textContent = 
+                amenitiesSummary.length > 0 ? amenitiesSummary.join(', ') : '-';
+
+            document.getElementById('summaryCheckIn').textContent = checkInDate || '-';
+            document.getElementById('summaryCheckOut').textContent = checkOutDate || '-';
+            document.getElementById('summaryGuests').textContent = 
+                `${adults} Adult(s), ${children} Child(ren)`;
+
+            // Calculate total
+            let total = 0;
+            
+            // Package price
+            if(selectedPackage) {
+                const priceText = selectedPackage.querySelector('.text-primary').textContent;
+                const basePrice = parseInt(priceText.replace(/[^0-9]/g, ''));
+                total += basePrice * parseInt(adults);
+            }
+
+            // Room price per night
+            if(roomType.value && numberOfNights > 0) {
+                const roomPrices = {
+                    'standard': 2000,
+                    'deluxe': 3500,
+                    'suite': 5000,
+                    'family': 6500
+                };
+                total += roomPrices[roomType.value] * numberOfNights;
+            }
+
+            // Additional amenities
+            if(extraBlanket.checked) {
+                total += 200 * parseInt(extraBlanketQty.value);
+            }
+            if(extraPillow.checked) {
+                total += 150 * parseInt(extraPillowQty.value);
+            }
+
+            document.getElementById('summaryTotal').textContent = `₱${total.toLocaleString()}`;
+        }
+
+        // Add event listeners for form inputs
+        document.getElementById('adults').addEventListener('change', updateSummary);
+        document.getElementById('children').addEventListener('change', updateSummary);
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking! We will contact you shortly to confirm your reservation.');
+            const selectedPackage = document.querySelector('.package-card.selected');
+            const service = selectedPackage ? selectedPackage.querySelector('h4').textContent.split(' ')[0].toLowerCase() : '';
+            window.location.href = 'bookingservice.html?service=' + encodeURIComponent(service);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            const loading = document.createElement('div');
+            loading.className = 'loading';
+            document.body.appendChild(loading);
+
+            setTimeout(() => {
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.remove();
+                }, 500);
+            }, 1000);
+        });
+
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effect to package cards
+        document.querySelectorAll('.package-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        const backButton = document.querySelector('.btn-back');
+        
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                navbar.classList.add('hidden');
+                backButton.classList.add('visible');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('hidden');
+                backButton.classList.remove('visible');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        }, false);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+
+            if (service) {
+                // Display the selected service
+                document.getElementById('selected-service').textContent = service.charAt(0).toUpperCase() + service.slice(1);
+            }
+        });
+    </script>
+</body>
+</html> 
