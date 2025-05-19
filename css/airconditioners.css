@@ -1,0 +1,442 @@
+/* Global Styles */
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #0057B8;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Calculator Sections */
+.calculator-container,
+.warranty-container,
+.service-history-container,
+.analytics-container,
+.tips-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.calculator-form,
+.warranty-form,
+.service-history-form,
+.analytics-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.calculator-form:hover,
+.warranty-form:hover,
+.service-history-form:hover,
+.analytics-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+/* Buttons */
+.calculate-btn,
+.check-warranty-btn,
+.load-history-btn,
+.load-analytics-btn,
+.schedule-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.calculate-btn:hover,
+.check-warranty-btn:hover,
+.load-history-btn:hover,
+.load-analytics-btn:hover,
+.schedule-btn:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Results Sections */
+.results,
+.warranty-results,
+.service-history-results,
+.analytics-results {
+    margin-top: 40px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards and Grids */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tip-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.tip-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.tip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.tip-card:hover .tip-image img {
+    transform: scale(1.1);
+}
+
+.tip-content {
+    padding: 25px;
+}
+
+/* Charts and Analytics */
+.chart-container {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.chart-container h4 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 30px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 15px;
+    width: 2px;
+    height: calc(100% + 15px);
+    background: #ddd;
+}
+
+/* Newsletter Section */
+.newsletter-signup {
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    max-width: 600px;
+    margin: 30px auto 0;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: var(--transition);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title h2 {
+        font-size: 2em;
+    }
+
+    .calculator-form,
+    .warranty-form,
+    .service-history-form,
+    .analytics-form {
+        padding: 25px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator-form,
+.warranty-form,
+.service-history-form,
+.analytics-form,
+.tip-card {
+    animation: slideIn 0.5s ease;
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+}
+
+/* Error States */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #dc3545;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+/* Success States */
+.success-message {
+    color: #28a745;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #28a745;
+}
+
+.form-group.success .success-message {
+    display: block;
+}
+
+/* Tooltips */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: var(--text-color);
+    color: var(--white);
+    font-size: 0.9em;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Print Styles */
+@media print {
+    .calculator-form,
+    .warranty-form,
+    .service-history-form,
+    .analytics-form {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .calculate-btn,
+    .check-warranty-btn,
+    .load-history-btn,
+    .load-analytics-btn,
+    .schedule-btn {
+        display: none;
+    }
+} 
